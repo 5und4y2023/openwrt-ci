@@ -13,6 +13,7 @@ uci commit
 sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
 
 sed -i '/helloworld/d' /etc/opkg/distfeeds.conf
+sed -i '/ssrp/d' /etc/opkg/distfeeds.conf
 sed -i '/passwall/d' /etc/opkg/distfeeds.conf
 sed -i '/core/d' /etc/opkg/distfeeds.conf
 sed -i '/smpackage/d' /etc/opkg/distfeeds.conf
@@ -27,13 +28,12 @@ echo "DISTRIB_REVISION='V${date_version}'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='OpenWrt  '" >> /etc/openwrt_release
 
-cp /etc/my-clash /etc/openclash/core/clash_meta
 #sysupgrade --restore-backup /root/diy/adg.tar.gz
 
 #sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 #sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
-#uci set wireless.default_radio0.ssid=TIKTOK-2.4G
-#uci set wireless.default_radio1.ssid=TIKTOK-5G
+uci set wireless.default_radio0.ssid=OpenWrt-2.4G
+uci set wireless.default_radio1.ssid=OpenWrt-5G
 uci set wireless.default_radio0.encryption=psk2+ccmp
 uci set wireless.default_radio1.encryption=psk2+ccmp
 uci set wireless.default_radio0.key=password
