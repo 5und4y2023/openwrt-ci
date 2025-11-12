@@ -6,14 +6,28 @@ uci delete ttyd.@ttyd[0].interface
 # 设置所有网口可连接 SSH
 uci set dropbear.@dropbear[0].Interface=''
 
+
+uci del network.wan6
+uci del network.lan.ip6assign
+uci del dhcp.lan.ra
+uci del dhcp.lan.ra_slaac
+uci del dhcp.lan.dns_service
+uci del dhcp.lan.dhcpv6
+uci del dhcp.lan.ndp
+uci del dhcp.lan.ra_flags
+uci add_list dhcp.lan.ra_flags='none'
+uci del network.globals.ula_prefix
+uci commit dhcp
+uci commit network
 uci commit
 
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 
 sed -i '/helloworld/d' /etc/opkg/distfeeds.conf
+sed -i '/ssrp/d' /etc/opkg/distfeeds.conf
 sed -i '/passwall/d' /etc/opkg/distfeeds.conf
 sed -ri '/check_signature/s@^[^#]@#&@' /etc/opkg.conf
-cp /etc/my-clash /etc/openclash/core/clash_meta
+
 
 exit 0
