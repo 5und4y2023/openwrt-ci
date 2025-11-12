@@ -7,6 +7,9 @@ mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 
 mv $GITHUB_WORKSPACE/patch/bw/hanwckf/zz-diy package/base-files/files/etc/uci-defaults/zz-diy.sh
 mv $GITHUB_WORKSPACE/patch/bw/hanwckf/mtwifi.sh package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
+mv $GITHUB_WORKSPACE/patch/bw/hanwckf/footer.htm feeds/luci/themes/luci-theme-argon/luasrc/view/themes/argon/footer.htm
+mv $GITHUB_WORKSPACE/patch/bw/hanwckf/footer_login.htm feeds/luci/themes/luci-theme-argon/luasrc/view/themes/argon/footer_login.htm
+
 
 if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
     echo "✅ 已选择 luci-app-openclash，添加 openclash core"
