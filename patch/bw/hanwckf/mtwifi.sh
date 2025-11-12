@@ -55,7 +55,8 @@ detect_mtwifi() {
 					set wireless.default_${dev}.device=${dev}
 					set wireless.default_${dev}.network=lan
 					set wireless.default_${dev}.mode=ap
-					set wireless.default_${dev}.ssid=${ssid}
+					set wireless.default_radio0.ssid=OpenWrt-2.4G
+					set wireless.default_radio1.ssid=OpenWrt-5G
 					set wireless.default_${dev}.encryption=psk2+ccmp
 					set wireless.default_${dev}.key=password
 EOF
