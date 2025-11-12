@@ -79,10 +79,9 @@ return baseclass.extend({
 		}
 
 		var fields = [
-			_('Hostname'),         'TikTok 路由器',
+			_('Hostname'),         boardinfo.hostname,
 			_('Local Time'),       datestr,
 			_('Uptime'),           systeminfo.uptime ? '%t'.format(systeminfo.uptime) : null,
-			_('CPU usage (%)'),    cpuusage.cpuusage
 		];
 
 		if (tempinfo.tempinfo) {
