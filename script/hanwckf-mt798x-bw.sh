@@ -1,7 +1,7 @@
 sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 sed -i "s/192\.168\.[0-9]*\.[0-9]*/192.168.5.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
-sed -i 's/ImmortalWrt/TikTok/g' package/base-files/files/bin/config_generate
-sed -i "s/ImmortalWrt/TikTok/g" package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
+sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
+sed -i "s/ImmortalWrt/OpenWrt/g" package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
 sed -i 's#mirrors.vsean.net/openwrt#mirror.nju.edu.cn/immortalwrt#g' package/emortal/default-settings/files/99-default-settings-chinese
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 
@@ -9,10 +9,17 @@ mv $GITHUB_WORKSPACE/patch/bw/hanwckf/zz-diy-wifi package/base-files/files/etc/u
 mv $GITHUB_WORKSPACE/patch/bw/hanwckf/mtwifi.sh package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
 
 if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
-    git clone --depth 1 -b core https://github.com/vernesong/OpenClash.git  package/openclash-core
-    tar -zxf package/openclash-core/master/meta/clash-linux-arm64.tar.gz -C package/base-files/files/etc/
-    mv package/base-files/files/etc/clash package/base-files/files/etc/my-clash
-    rm -rf package/openclash-core
+    echo "✅ 已选择 luci-app-openclash，添加 openclash core"
+    mkdir -p files/etc/openclash/core
+    # Download clash_meta
+    META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
+    wget -qO- $META_URL | tar xOz > files/etc/openclash/core/clash_meta
+    chmod +x files/etc/openclash/core/clash_meta
+    # Download GeoIP and GeoSite
+    # wget -q https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat -O files/etc/openclash/GeoIP.dat
+    # wget -q https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat -O files/etc/openclash/GeoSite.dat
+else
+    echo "⚪️ 未选择 luci-app-openclash"
 fi
 #完全删除luci版本
 sed -i "s/+ ' \/ ' : '') + (luciversion ||/:/g" feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
@@ -34,13 +41,9 @@ git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/l
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
-#git clone --depth=1 https://github.com/gdy666/luci-app-lucky.git package/luci-app-lucky
-git clone --depth 1 https://github.com/destan19/OpenAppFilter.git package/oaf
-git clone --depth 1 https://github.com/sirpdboy/netspeedtest.git package/luci-app-netspeedtest
+
 
 rm -rf feeds/packages/net/adguardhome
-rm -rf feeds/packages/net/alist
-rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/applications/luci-app-smartdns
 rm -rf feeds/packages/net/tailscale
@@ -68,10 +71,10 @@ git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/packages pac
 mv package/imm24pkg/net/frp feeds/packages/net/frp
 rm -rf package/imm24pkg
 
-rm -rf feeds/luci/applications/luci-app-frpc
-git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci package/imm24luci
-mv package/imm24luci/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
-rm -rf package/imm24luci
+#rm -rf feeds/luci/applications/luci-app-frpc
+#git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci package/imm24luci
+#mv package/imm24luci/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
+#rm -rf package/imm24luci
 
 #git clone --depth 1 https://github.com/coolsnowwolf/lede.git package/lede
 #mv package/lede/package/lean/luci-app-leigod-acc package/luci-app-leigod-acc
