@@ -7,7 +7,7 @@ increase_wifi_num=32
 existed_wifi_num=0
 
 # WiFi名称
-ssid=1
+ssid=
 
 # WiFi密码
 password=123123123
@@ -71,7 +71,7 @@ for i in $(seq $((existed_wifi_num + 1)) $total_wifi); do
     uci set wireless.wifinet${wifinet_num}=wifi-iface
     uci set wireless.wifinet${wifinet_num}.device="$wireless_dev"
     uci set wireless.wifinet${wifinet_num}.mode='ap'
-    uci set wireless.wifinet${wifinet_num}.ssid="${ssid}${wifi_id}"
+    uci set wireless.wifinet${wifinet_num}.ssid="${wifi_id}"
     uci set wireless.wifinet${wifinet_num}.encryption='psk2+ccmp'
     uci set wireless.wifinet${wifinet_num}.key="$password"
     uci set wireless.wifinet${wifinet_num}.ifname="${network_dev}${wifi_id}"
