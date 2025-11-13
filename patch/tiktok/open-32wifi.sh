@@ -7,7 +7,7 @@ increase_wifi_num=32
 existed_wifi_num=0
 
 # WiFi名称
-ssid=
+ssid=WiFi
 
 # WiFi密码
 password=123123123
