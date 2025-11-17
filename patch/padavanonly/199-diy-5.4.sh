@@ -2,6 +2,8 @@
 
 uci set firewall.@defaults[0].input='ACCEPT'
 uci commit firewall
+mv /diy4me/socat /etc/config/socat
+mv /diy4me/zerotier /etc/config/zerotier
 
 # 设置所有网口可访问网页终端
 uci delete ttyd.@ttyd[0].interface
@@ -9,11 +11,11 @@ uci delete ttyd.@ttyd[0].interface
 # 设置所有网口可连接 SSH
 uci set dropbear.@dropbear[0].Interface=''
 
-uci set wireless.default_MT7981_1_1.ssid=360T7-2.4G
+uci set wireless.default_MT7981_1_1.ssid=CMCC-RTG
 uci set wireless.default_MT7981_1_1.encryption=psk2+ccmp
 uci set wireless.default_MT7981_1_1.key=Rtg@168$
 
-uci set wireless.default_MT7981_1_2.ssid=360T7-5G
+uci set wireless.default_MT7981_1_2.ssid=CMCC-RTG-5G
 uci set wireless.default_MT7981_1_2.encryption=psk2+ccmp
 uci set wireless.default_MT7981_1_2.key=Rtg@168$
 uci commit wireless
