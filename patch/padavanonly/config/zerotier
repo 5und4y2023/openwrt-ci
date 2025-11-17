@@ -3,5 +3,5 @@ config zerotier 'sample_config'
 	list join '6e80c9e3d6b115eb'
 	list join '6e80c9e3d695ff2d'
 	option nat '1'
-	option enabled '0'
+	option enabled '1'
 
