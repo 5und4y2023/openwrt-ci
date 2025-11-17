@@ -1,5 +1,7 @@
 #!/bin/sh
 
+uci set firewall.@defaults[0].input='ACCEPT'
+uci commit firewall
 
 # 设置所有网口可访问网页终端
 uci delete ttyd.@ttyd[0].interface
@@ -27,5 +29,8 @@ sed -i '/filogic/d' /etc/opkg/distfeeds.conf
 #sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 #sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 
-
+/etc/init.d/network restart >/dev/null 2>&1
+/etc/init.d/firewall restart >/dev/null 2>&1
+/etc/init.d/dnsmasq restart >/dev/null 2>&1
+/etc/init.d/dropbear restart >/dev/null 2>&1
 exit 0
