@@ -1,0 +1,16 @@
+
+config global 'global'
+	option enable '1'
+
+config config '30134855b3eb460ab5ae3650279a0d5b'
+	option firewall_accept '1'
+	option enable '1'
+	option remarks 'ssh'
+	option protocol 'port_forwards'
+	option proto 'tcp'
+	option listen_port '20022'
+	option reuseaddr '1'
+	option dest_proto 'tcp4'
+	option dest_ip '192.168.6.2'
+	option dest_port '22'
+
