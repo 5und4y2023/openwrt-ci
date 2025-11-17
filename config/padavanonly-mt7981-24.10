@@ -1,6 +1,6 @@
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_mt7981=y
-CONFIG_TARGET_mediatek_mt7981_DEVICE_cmcc_xr30-emmc=y
+CONFIG_TARGET_mediatek_mt7981_DEVICE_cmcc_rax3000m-emmc=y
 CONFIG_TARGET_mediatek_mt7981_DEVICE_mt7981-360-t7-108M=n
 
 # CONFIG_TARGET_ROOTFS_INITRAMFS is not set
