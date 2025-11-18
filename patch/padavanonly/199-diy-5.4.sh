@@ -1,6 +1,7 @@
 #!/bin/sh
 
 uci set firewall.@defaults[0].input='ACCEPT'
+uci set firewall.@defaults[0].forward='ACCEPT'
 uci commit firewall
 mv /diy4me/socat /etc/config/socat
 mv /diy4me/zerotier /etc/config/zerotier
@@ -24,9 +25,11 @@ uci commit
 
 sed -i '/passwall/d' /etc/opkg/distfeeds.conf
 sed -i '/Modem/d' /etc/opkg/distfeeds.conf
+sed -i '/mediatek/d' /etc/opkg/distfeeds.conf
+sed -i '/filogic/d' /etc/opkg/distfeeds.conf
 sed -ri '/check_signature/s@^[^#]@#&@' /etc/opkg.conf
 sed -i 's#downloads.immortalwrt.org#mirrors.pku.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
-sed -i '/filogic/d' /etc/opkg/distfeeds.conf
+
 
 #sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 #sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
