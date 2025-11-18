@@ -55,6 +55,7 @@ git clone --depth 1 https://github.com/AutoCONFIG/luci-app-rustdesk-server.git p
 git clone --depth 1 https://github.com/sirpdboy/netspeedtest.git package/luci-app-netspeedtest
 git clone --depth 1 https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
 git clone --depth 1 https://github.com/AngelaCooljx/luci-theme-material3.git package/luci-theme-material3
+git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat.git package/luci-app-socat
 
 #rm -rf feeds/packages/net/{adguardhome,alist,tailscale}
 git clone --depth 1 https://github.com/kenzok8/small-package.git package/small-package
