@@ -1,0 +1,6 @@
+
+config network '1'
+	option id '6e80c9e3d6b115eb'
+
+config network '2'
+	option id '6e80c9e3d695ff2d'
