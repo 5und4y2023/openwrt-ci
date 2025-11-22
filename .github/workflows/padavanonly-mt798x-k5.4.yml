@@ -7,7 +7,7 @@ on:
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6.git
   REPO_BRANCH: 2410
-  CONFIG_FILE: config/padavanonly-mt7981-24.10
+  CONFIG_FILE: config/padavanonly-mt7981-k5.4
   DIY_SCRIPT: script/padavanonly-mt798x-k5.4-24.10.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
