@@ -1,4 +1,4 @@
-name: padavanonly-mt798x-k5.4
+name: padavanonly-k5.4-mt798x
 # 脚本参考github/haiibo
 # Add a button to trigger the workflow
 on: 
@@ -7,14 +7,14 @@ on:
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6.git
   REPO_BRANCH: 2410
-  CONFIG_FILE: config/padavanonly-mt7981-k5.4
-  DIY_SCRIPT: script/padavanonly-mt798x-k5.4.sh
+  CONFIG_FILE: config/padavanonly-k5.4-mt7981
+  DIY_SCRIPT: script/padavanonly-k5.4-mt798x.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: padavanonly-mt798x-k5.4-24.10
+  FIRMWARE_TAG: padavanonly-k5.4-mt798x
   TZ: Asia/Shanghai
 
 jobs:
@@ -84,7 +84,7 @@ jobs:
       uses: HiGarfield/cachewrtbuild@main
       with:
         ccache: false
-        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.SOURCE_AUTHOR }}-mt798x-24.10
+        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.SOURCE_AUTHOR }}-k5.4
         prefix: ${{ env.OPENWRT_PATH }}
     
     - name: Install Feeds(安装feeds)
