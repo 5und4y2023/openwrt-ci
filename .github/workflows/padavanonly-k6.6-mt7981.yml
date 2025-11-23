@@ -8,13 +8,13 @@ env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6.git
   REPO_BRANCH: openwrt-24.10-6.6
   CONFIG_FILE: config/padavanonly-k6.6-mt7981
-  DIY_SCRIPT: script/padavanonly-mt798x-k6.6.sh
+  DIY_SCRIPT: script/padavanonly-k6.6-mt798x.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: padavanonly-mt798x-k6.6
+  FIRMWARE_TAG: padavanonly-k6.6-mt798x
   TZ: Asia/Shanghai
 
 jobs:
@@ -89,7 +89,7 @@ jobs:
       uses: HiGarfield/cachewrtbuild@main
       with:
         ccache: false
-        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.SOURCE_AUTHOR }}-mt798x
+        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.SOURCE_AUTHOR }}
         prefix: ${{ env.OPENWRT_PATH }}
     
     - name: Install Feeds(安装feeds)
