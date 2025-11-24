@@ -1,6 +1,6 @@
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_filogic=y
-CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_cmcc_rax3000m-stock=y
+CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m-stock=y
 
 CONFIG_TARGET_MULTI_PROFILE=n
 CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_xiaomi_mi-router-ax3000t=y
