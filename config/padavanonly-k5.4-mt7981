@@ -1,11 +1,15 @@
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_mt7981=y
-CONFIG_TARGET_mediatek_mt7981_DEVICE_cmcc_rax3000m=y
+CONFIG_TARGET_mediatek_mt7981_DEVICE_cmcc_rax3000m-emmc=y
 
 CONFIG_TARGET_MULTI_PROFILE=n
 CONFIG_TARGET_DEVICE_mediatek_mt7981_DEVICE_jcg_q30=y
-CONFIG_TARGET_DEVICE_mediatek_mt7981_DEVICE_cmcc_rax3000m-emmc=y
-CONFIG_TARGET_DEVICE_mediatek_mt7981_DEVICE_cmcc_rax3000m=y
+# CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m-emmc is not set
+# CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m is not set
+# CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m-stock is not set
+# CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000me is not set
+# CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_xr30-nand is not set
+# CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_xr30-stock is not set
 
 # CONFIG_TARGET_ROOTFS_INITRAMFS is not set
 CONFIG_DEVEL=y
