@@ -1,5 +1,18 @@
 #!/bin/sh
 
+uci del network.wan6
+uci del network.lan.ip6assign
+uci del dhcp.lan.ra
+uci del dhcp.lan.ra_slaac
+uci del dhcp.lan.dns_service
+uci del dhcp.lan.dhcpv6
+uci del dhcp.lan.ndp
+uci del dhcp.lan.ra_flags
+uci add_list dhcp.lan.ra_flags='none'
+uci del network.globals.ula_prefix
+uci commit dhcp
+uci commit network
+
 # 设置所有网口可访问网页终端
 uci delete ttyd.@ttyd[0].interface
 
