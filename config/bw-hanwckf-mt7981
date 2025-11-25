@@ -1,6 +1,6 @@
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_mt7981=y
-CONFIG_TARGET_mediatek_mt7981_DEVICE_honor_fur-602=y
+CONFIG_TARGET_mediatek_mt7981_DEVICE_konka_komi-a31=y
 
 # CONFIG_TARGET_ROOTFS_INITRAMFS is not set
 CONFIG_DEVEL=y
