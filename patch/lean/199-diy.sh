@@ -10,6 +10,18 @@ uci commit
 #uci set luci.main.mediaurlbase=/luci-static/design
 #uci commit luci
 
+uci del dhcp.lan.ra
+uci del dhcp.lan.ra_slaac
+uci del dhcp.lan.dns_service
+uci del dhcp.lan.ra_flags
+uci del network.globals.ula_prefix
+uci del dhcp.lan.dhcpv6
+uci del dhcp.lan.ndp
+uci del network.wan6
+uci del network.lan.ip6assign
+
+uci commit dhcp
+uci commit network
 sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
 
 sed -i '/helloworld/d' /etc/opkg/distfeeds.conf
@@ -28,8 +40,6 @@ echo "DISTRIB_REVISION='V${date_version}'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='OpenWrt  '" >> /etc/openwrt_release
 
-#sysupgrade --restore-backup /root/diy/adg.tar.gz
-
 #sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 #sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 uci set wireless.default_radio0.ssid=OpenWrt-2.4G
@@ -39,5 +49,6 @@ uci set wireless.default_radio1.encryption=psk2+ccmp
 uci set wireless.default_radio0.key=password
 uci set wireless.default_radio1.key=password
 uci commit wireless
+uci commit
 /etc/init.d/network restart
 exit 0
