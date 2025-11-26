@@ -11,7 +11,7 @@ sed -i '/tencent.com/d' package/lean/default-settings/files/zzz-default-settings
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 mv $GITHUB_WORKSPACE/patch/lean/199-diy.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
 
-if grep -q "openclash=y" $CONFIG_FILE; then
+if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
     echo "✅ 已选择 luci-app-openclash，添加 openclash core"
     mkdir -p files/etc/openclash/core
     # Download clash_meta
@@ -31,12 +31,16 @@ git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 25.x feeds/
 rm -rf feeds/packages/net/{v2ray-geodata,mosdns}
 rm -rf feeds/luci/applications/{luci-app-ssr-plus,luci-app-openclash,luci-app-passwall,luci-app-passwall2,luci-app-mosdns}
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
+#git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
+#git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 #find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 #find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5-lua package/mosdns
+git clone --depth 1 -b main https://github.com/kiddin9/kwrt-packages.git package/kwrt-pkg
+mv package/kwrt-pkg/luci-app-passwall package/luci-app-passwall
+mv package/kwrt-pkg/luci-app-passwall2 package/luci-app-passwall2
+rm -rf package/kwrt-pkg
 
 # iStore
 git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
