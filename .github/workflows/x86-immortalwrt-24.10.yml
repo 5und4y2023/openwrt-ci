@@ -7,7 +7,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: openwrt-24.10
-  CONFIG_FILE: config/x86/x86-imm24
+  CONFIG_FILE: config/x86/x86-imm24-okg
   DIY_SCRIPT: script/x86-imm24.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
@@ -155,6 +155,8 @@ jobs:
         cd $OPENWRT_PATH/bin/targets/*/*
         cat sha256sums
         cp $OPENWRT_PATH/.config full.config
+        mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
+        tar -zcf Packages.tar.gz packages
         rm -rf packages feeds.buildinfo version.buildinfo
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
 
