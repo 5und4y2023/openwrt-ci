@@ -36,10 +36,9 @@ sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/openwrt/releases/24.10.4/targ
 sed -i '$a src/gz filogicpkg https://mirrors.pku.edu.cn/openwrt/releases/24.10.4/targets/mediatek/filogic/packages' /etc/opkg/distfeeds.conf
 echo > /etc/opkg/customfeeds.conf
 sed -i '$a src/gz kiddin9 https://dl.openwrt.ai/releases/24.10/packages/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
-#sed -i '$a #src/gz opkg https://opkg.888608.xyz/openwrt-24.10/aarch64_cortex-a53' /etc/opkg/customfeeds.conf
+
 sed -i 's/https/http/g' /etc/opkg/distfeeds.conf
 
-cp /etc/my-clash /etc/openclash/core/clash_meta
 
 # wifi设置
 uci set wireless.default_radio0.ssid=OpenWrt-2.4G
