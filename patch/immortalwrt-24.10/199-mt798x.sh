@@ -49,6 +49,8 @@ uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macadd
 #uci set wireless.default_radio0.encryption='psk2+ccmp'
 #uci set wireless.default_radio1.key='66668888'
 #uci set wireless.default_radio0.key='66668888'
+uci set wireless.default_radio0.macaddr='random'
+uci set wireless.default_radio1.macaddr='random'
 uci commit wireless
 uci commit
 
