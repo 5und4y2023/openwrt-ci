@@ -10,10 +10,10 @@ existed_wifi_num=0
 ssid=WiFi
 
 # WiFi密码
-password=123123123
+password=password
 
 # WiFi接口地址
-ipaddr=10.10.101.1
+ipaddr=10.10.1.1
 
 # 是否保留默认WiFi
 keep_default_wifi=no
@@ -71,7 +71,7 @@ for i in $(seq $((existed_wifi_num + 1)) $total_wifi); do
     uci set wireless.wifinet${wifinet_num}=wifi-iface
     uci set wireless.wifinet${wifinet_num}.device="$wireless_dev"
     uci set wireless.wifinet${wifinet_num}.mode='ap'
-    uci set wireless.wifinet${wifinet_num}.ssid="${wifi_id}"
+    uci set wireless.wifinet${wifinet_num}.ssid="${ssid}-${wifi_id}"
     uci set wireless.wifinet${wifinet_num}.encryption='psk2+ccmp'
     uci set wireless.wifinet${wifinet_num}.key="$password"
     uci set wireless.wifinet${wifinet_num}.ifname="${network_dev}${wifi_id}"
