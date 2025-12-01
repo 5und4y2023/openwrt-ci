@@ -75,6 +75,7 @@ mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
 mv package/kz8-small/luci-app-wrtbwmon package/luci-app-wrtbwmon
 mv package/kz8-small/wrtbwmon package/wrtbwmon
 mv package/kz8-small/homebox package/homebox
+mv package/kz8-small/poweroffdevice package/luci-app-poweroffdevice
 mv package/kz8-small/tailscale package/tailscale
 mv package/kz8-small/luci-app-tailscale package/luci-app-tailscale
 mv package/kz8-small/luci-app-socat package/luci-app-socat
