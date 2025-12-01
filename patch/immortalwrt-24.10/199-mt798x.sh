@@ -41,16 +41,16 @@ sed -i '$a src/gz core https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/t
 #sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/packages-24.10/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
 
 #cp /etc/my-clash /etc/openclash/core/clash_meta
-#chmod +x /root/open-wifi.sh
+chmod +x /root/open-wifi.sh
 
 uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
 uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
-uci set wireless.default_radio1.encryption='psk2+ccmp'
-uci set wireless.default_radio0.encryption='psk2+ccmp'
-uci set wireless.default_radio1.key='66668888'
-uci set wireless.default_radio0.key='66668888'
+#uci set wireless.default_radio1.encryption='psk2+ccmp'
+#uci set wireless.default_radio0.encryption='psk2+ccmp'
+#uci set wireless.default_radio1.key='66668888'
+#uci set wireless.default_radio0.key='66668888'
 uci commit wireless
 uci commit
 
-#/etc/init.d/network restart >/dev/null 2>&1
+/etc/init.d/network restart >/dev/null 2>&1
 exit 0
