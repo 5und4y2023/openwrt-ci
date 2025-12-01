@@ -1,15 +1,15 @@
 #!/bin/sh
 
-uci del network.wan6
-uci del network.lan.ip6assign
-uci del dhcp.lan.ra
-uci del dhcp.lan.ra_slaac
-uci del dhcp.lan.dns_service
+uci set network.lan.ip6assign=64
+uci del network.globals.ula_prefix
+uci set dhcp.lan.dns_service='0'
 uci del dhcp.lan.dhcpv6
 uci del dhcp.lan.ndp
+uci set dhcp.lan.ra='server'
 uci del dhcp.lan.ra_flags
 uci add_list dhcp.lan.ra_flags='none'
-uci del network.globals.ula_prefix
+uci set network.lan.delegate='0'
+uci set network.lan.ip6ifaceid='random'
 uci commit dhcp
 uci commit network
 
