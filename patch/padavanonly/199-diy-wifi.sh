@@ -22,8 +22,6 @@ sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/packages-24.10/aarch64_generic/
 #sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 #sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 
-cp /etc/my-clash /etc/openclash/core/clash_meta
-
 uci del network.wan6
 uci del network.lan.ip6assign
 uci del network.globals.ula_prefix
@@ -46,16 +44,16 @@ uci set wireless.default_MT7986_1_1.key=password
 uci set wireless.default_MT7986_1_2.encryption=psk2+ccmp
 uci set wireless.default_MT7986_1_2.key=password
 # 路由器cpu芯片
-router_cpu=MT7986
+router_cpu=MT7981
 
 # 新增WiFi数量
-increase_wifi_num=30
+increase_wifi_num=6
 
 # 除去默认，原本有几个WiFi
 existed_wifi_num=0
 
 # WiFi名称
-ssid=X60Pro
+ssid=RAX3000M
 
 # WiFi密码
 password=password
