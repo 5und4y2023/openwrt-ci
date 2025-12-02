@@ -10,16 +10,14 @@ uci set dropbear.@dropbear[0].Interface=''
 
 uci commit
 
-sed -i '/passwall/d' /etc/opkg/distfeeds.conf
 sed -i '/modem/d' /etc/opkg/distfeeds.conf
+sed -i '/Modem/d' /etc/opkg/distfeeds.conf
+sed -i '/passwall/d' /etc/opkg/distfeeds.conf
 sed -ri '/check_signature/s@^[^#]@#&@' /etc/opkg.conf
 sed -i 's#downloads.immortalwrt.org#mirrors.pku.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
-sed -i '/x86/d' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz targets_packages https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.3/targets/x86/64/packages' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.3/targets/x86/64/kmods/6.6.104-1-615f744fa1708941b4ef00bdfd1271a9' /etc/opkg/distfeeds.conf
-sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/packages-24.10/x86_64/kiddin9' /etc/opkg/customfeeds.conf
-
-cp /etc/my-clash /etc/openclash/core/clash_meta
+sed -i '/targets/d' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/targets/x86/64/kmods/6.6.110-1-f8c5d7fde74fa4fedf4370775255c515' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz immortalwrt_core https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/targets/x86/64/packages' /etc/opkg/distfeeds.conf
 
 #uci set dhcp.lan.ignore='1'
 #uci set network.lan.ipaddr='192.168.31.3'
