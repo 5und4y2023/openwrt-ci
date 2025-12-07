@@ -19,6 +19,7 @@ sed -i '/targets/d' /etc/opkg/distfeeds.conf
 sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/targets/x86/64/kmods/6.6.110-1-f8c5d7fde74fa4fedf4370775255c515' /etc/opkg/distfeeds.conf
 sed -i '$a src/gz immortalwrt_core https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/targets/x86/64/packages' /etc/opkg/distfeeds.conf
 
+
 #uci set dhcp.lan.ignore='1'
 #uci set network.lan.ipaddr='192.168.31.3'
 #uci commit dhcp
