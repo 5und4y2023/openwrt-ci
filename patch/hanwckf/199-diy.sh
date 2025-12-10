@@ -5,6 +5,7 @@ uci delete ttyd.@ttyd[0].interface
 
 # 设置所有网口可连接 SSH
 uci set dropbear.@dropbear[0].Interface=''
+uci set luci.main.lang='zh_cn'
 
 uci commit
 
