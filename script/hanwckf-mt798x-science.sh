@@ -1,6 +1,6 @@
-sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
-sed -i "s/192\.168\.[0-9]*\.[0-9]*/192.168.5.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
-mv $GITHUB_WORKSPACE/patch/hanwckf/199-diy-wifi.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
+sed -i 's/192.168.1.1/10.3.2.1/g' package/base-files/files/bin/config_generate
+sed -i "s/192\.168\.[0-9]*\.[0-9]*/10.3.2.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
+mv $GITHUB_WORKSPACE/patch/hanwckf/199-diy.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
 #sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 #sed -i "s/ImmortalWrt/OpenWrt/g" package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
 #mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
@@ -60,7 +60,6 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
-#mv $GITHUB_WORKSPACE/patch/Makefile package/passwall-packages/xray-core/Makefile
 
 git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/openlist
 #git clone --depth 1 https://github.com/gdy666/luci-app-lucky.git package/luci-app-lucky
