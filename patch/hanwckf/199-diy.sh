@@ -20,18 +20,18 @@ uci del dhcp.lan.ra_flags
 uci add_list dhcp.lan.ra_flags='none'
 uci del network.globals.ula_prefix
 
-uci set network.lan.ipaddr=10.0.0.1
+#uci set network.lan.ipaddr=10.1.1.1
 
 uci commit dhcp
 uci commit network
 
-uci set wireless.default_MT7981_1_1.ssid=Kwrt-2.4G
+uci set wireless.default_MT7981_1_1.ssid=Openwrt-2.4G
 uci set wireless.default_MT7981_1_1.encryption=psk2+ccmp
-uci set wireless.default_MT7981_1_1.key=66668888
+uci set wireless.default_MT7981_1_1.key=123456789
 
-uci set wireless.default_MT7981_1_2.ssid=Kwrt-5G
+uci set wireless.default_MT7981_1_2.ssid=Openwrt-5G
 uci set wireless.default_MT7981_1_2.encryption=psk2+ccmp
-uci set wireless.default_MT7981_1_2.key=66668888
+uci set wireless.default_MT7981_1_2.key=123456789
 uci commit wireless
 uci commit
 
@@ -41,8 +41,8 @@ sed -i '/passwall/d' /etc/opkg/distfeeds.conf
 sed -ri '/check_signature/s@^[^#]@#&@' /etc/opkg.conf
 #sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 #sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
-sed -i 's/root::0:0:99999:7:::/root:$1$ZXWYOFQt$n8kWpRWwiJI5JdzQ9.POM1:0:0:99999:7:::/g' /etc/shadow
-sed -i 's/root:::0:99999:7:::/root:$1$ZXWYOFQt$n8kWpRWwiJI5JdzQ9.POM1:0:0:99999:7:::/g' /etc/shadow
+#sed -i 's/root::0:0:99999:7:::/root:$1$ZXWYOFQt$n8kWpRWwiJI5JdzQ9.POM1:0:0:99999:7:::/g' /etc/shadow
+#sed -i 's/root:::0:99999:7:::/root:$1$ZXWYOFQt$n8kWpRWwiJI5JdzQ9.POM1:0:0:99999:7:::/g' /etc/shadow
 
 /etc/init.d/network restart
 
