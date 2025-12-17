@@ -25,11 +25,11 @@ uci del network.globals.ula_prefix
 uci commit dhcp
 uci commit network
 
-uci set wireless.default_MT7981_1_1.ssid=Openwrt-2.4G
+uci set wireless.default_MT7981_1_1.ssid=OpenWrt-2.4G
 uci set wireless.default_MT7981_1_1.encryption=psk2+ccmp
 uci set wireless.default_MT7981_1_1.key=123456789
 
-uci set wireless.default_MT7981_1_2.ssid=Openwrt-5G
+uci set wireless.default_MT7981_1_2.ssid=OpenWrt-5G
 uci set wireless.default_MT7981_1_2.encryption=psk2+ccmp
 uci set wireless.default_MT7981_1_2.key=123456789
 uci commit wireless
