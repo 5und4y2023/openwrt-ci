@@ -1,6 +1,6 @@
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_mt7981=y
-CONFIG_TARGET_mediatek_mt7981_DEVICE_h3c_nx30pro=y
+CONFIG_TARGET_mediatek_mt7981_DEVICE_mt7981-360-t7-108M=y
 
 # CONFIG_TARGET_ROOTFS_INITRAMFS is not set
 CONFIG_DEVEL=y
@@ -299,14 +299,17 @@ CONFIG_PACKAGE_luci-app-quickstart=n
 CONFIG_PACKAGE_luci-i18n-quickstart-zh-cn=n
 CONFIG_PACKAGE_luci-app-istorex=n
 
-CONFIG_PACKAGE_luci-app-frpc=n
+CONFIG_PACKAGE_luci-app-frpc=y
+CONFIG_PACKAGE_luci-app-socat=y
+CONFIG_PACKAGE_luci-app-wireguard=y
+CONFIG_PACKAGE_luci-app-zerotier=y
 CONFIG_PACKAGE_luci-app-nps=n
 CONFIG_PACKAGE_luci-app-openclash=y
 
-CONFIG_PACKAGE_luci-app-passwall=n
+CONFIG_PACKAGE_luci-app-passwall=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Geoview=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=n
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy is not set
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client is not set
 # CONFIG_PACKAGE_luci-app-passwalln_INCLUDE_Shadowsocks_Libev_Server is not set
@@ -323,7 +326,7 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin is not set
 
-CONFIG_PACKAGE_luci-app-passwall2=y
+CONFIG_PACKAGE_luci-app-passwall2=n
 CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_IPv6_Nat=y
 CONFIG_PACKAGE_luci-app-passwall2_Iptables_Transparent_Proxy=y
 # CONFIG_PACKAGE_luci-app-passwall2_Nftables_Transparent_Proxy is not set
