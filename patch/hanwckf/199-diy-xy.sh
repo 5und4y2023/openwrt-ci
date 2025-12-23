@@ -16,7 +16,7 @@ uci set wireless.default_MT7981_1_1.ssid=CMCC-RTG
 uci set wireless.default_MT7981_1_1.encryption=psk2+ccmp
 uci set wireless.default_MT7981_1_1.key=Rtg@168$
 
-uci set wireless.default_MT7981_1_2.disable=1
+uci set wireless.default_MT7981_1_2.disabled=1
 uci commit wireless
 
 uci set network.lan.ipaddr=192.168.6.1
