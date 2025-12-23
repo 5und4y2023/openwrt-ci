@@ -36,8 +36,8 @@ uci commit
 
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
-
-cp /etc/my-clash /etc/openclash/core/clash_meta
+cat /diy4me/rules-pw2 >> /etc/config/passwall2
+cat /diy4me/rules-pw2 >> /usr/share/passwall2/0_default_config
 
 ###################################################################################
 uci add firewall zone
