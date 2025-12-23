@@ -1,0 +1,8 @@
+
+config zerotier 'global'
+	option fw_allow_input '1'
+	option enabled '1'
+
+config network '1'
+	option id '6e80c9e3d6b115eb'
+
