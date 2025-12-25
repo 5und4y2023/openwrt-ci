@@ -26,15 +26,15 @@ detect_mtwifi() {
 				if [ "$band" = "2g" ]; then
 					htmode="HE40"
 					htbsscoex="1"
-					ssid="TikTok-2.4G"
+					ssid="ImmortalWrt-2.4G"
 				elif [ "$band" = "5g" ]; then
 					htmode="HE160"
 					htbsscoex="0"
-					ssid="TikTok-5G"
+					ssid="ImmortalWrt-5G"
 				elif [ "$band" = "6g" ]; then
 					htmode="HE160"
 					htbsscoex="0"
-					ssid="TikTok-6G"
+					ssid="ImmortalWrt-6G"
 				fi
 
 				uci -q batch <<-EOF
