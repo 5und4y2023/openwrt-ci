@@ -8,13 +8,13 @@ mv $GITHUB_WORKSPACE/patch/padavanonly/199-diy-5.4.sh package/base-files/files/e
 #sed -i 's#mirrors.vsean.net/openwrt#mirror.nju.edu.cn/immortalwrt#g' package/emortal/default-settings/files/99-default-settings-chinese
 #mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 
-#mkdir -p package/base-files/files/diy4me
+mkdir -p package/base-files/files/diy4me
 #mv $GITHUB_WORKSPACE/patch/padavanonly/199-diy-wifi.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
 #chmod +x package/base-files/files/etc/uci-defaults/zz-diy.sh
 #mv $GITHUB_WORKSPACE/patch/hanwckf/passwall/rules-pw2 package/base-files/files/diy4me/rules-pw2
 # sed -i 's/0x580000 0x7280000/0x580000 0x1cc00000/g' target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7986a-netcore-n60-pro.dts
-#mv $GITHUB_WORKSPACE/patch/padavanonly/config/zerotier package/base-files/files/diy4me/zerotier
-#mv $GITHUB_WORKSPACE/patch/padavanonly/config/socat package/base-files/files/diy4me/socat
+mv $GITHUB_WORKSPACE/patch/padavanonly/config/zerotier package/base-files/files/diy4me/zerotier
+mv $GITHUB_WORKSPACE/patch/padavanonly/config/socat package/base-files/files/diy4me/socat
 
 mv $GITHUB_WORKSPACE/patch/padavanonly/libxcrypt-Makefile feeds/packages/libs/libxcrypt/Makefile
 sed -i 's/ci-llvm=true/ci-llvm=false/g' feeds/packages/lang/rust/Makefile
