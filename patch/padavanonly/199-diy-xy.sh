@@ -19,7 +19,7 @@ uci set wireless.default_MT7981_1_1.key=Rtg@168$
 uci set wireless.default_MT7981_1_2.disabled=1
 uci commit wireless
 
-uci set network.lan.ipaddr=192.168.6.2
+uci set network.lan.ipaddr=192.168.7.2
 uci commit network
 uci commit
 
