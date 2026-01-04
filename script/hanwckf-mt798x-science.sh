@@ -1,6 +1,6 @@
 sed -i 's/192.168.1.1/10.3.2.1/g' package/base-files/files/bin/config_generate
 sed -i "s/192\.168\.[0-9]*\.[0-9]*/10.3.2.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
-mv $GITHUB_WORKSPACE/patch/hanwckf/199-diy-xy.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
+mv $GITHUB_WORKSPACE/patch/hanwckf/199-diy.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
 #sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 #sed -i "s/ImmortalWrt/OpenWrt/g" package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
 #mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
@@ -10,12 +10,12 @@ mv $GITHUB_WORKSPACE/patch/hanwckf/199-diy-xy.sh package/base-files/files/etc/uc
 #mv $GITHUB_WORKSPACE/patch/hanwckf/mk/modules-netfilter.mk package/kernel/linux/modules/netfilter.mk
 #mv $GITHUB_WORKSPACE/patch/hanwckf/mk/include-netfilter.mk include/netfilter.mk
 
-mkdir -p package/base-files/files/diy4me
+#mkdir -p package/base-files/files/diy4me
 #mv $GITHUB_WORKSPACE/patch/hanwckf/passwall/mt798x-30wifi-closed.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
 #chmod +x package/base-files/files/etc/uci-defaults/zz-diy.sh
 #mv $GITHUB_WORKSPACE/patch/hanwckf/passwall/rules-pw2 package/base-files/files/diy4me/rules-pw2
-mv $GITHUB_WORKSPACE/patch/hanwckf/xy/socat package/base-files/files/diy4me/socat
-mv $GITHUB_WORKSPACE/patch/hanwckf/xy/zerotier package/base-files/files/diy4me/zerotier
+#mv $GITHUB_WORKSPACE/patch/hanwckf/xy/socat package/base-files/files/diy4me/socat
+#mv $GITHUB_WORKSPACE/patch/hanwckf/xy/zerotier package/base-files/files/diy4me/zerotier
 
 
 if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
