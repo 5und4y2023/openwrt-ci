@@ -29,7 +29,7 @@ git clone --depth 1 https://github.com/lwb1978/openwrt-gecoosac.git package/open
 
 rm -rf feeds/packages/lang/golang
 git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
-git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
+rm -rf feeds/luci/applications/{luci-app-openclash,luci-app-passwall,luci-app-passwall2,luci-app-mosdns}
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/luci-app-passwall2
