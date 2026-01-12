@@ -13,7 +13,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
-  FIRMWARE_RELEASE: true
+  FIRMWARE_RELEASE: false
   FIRMWARE_TAG: x86-immortalwrt-24.10
   TZ: Asia/Shanghai
 
