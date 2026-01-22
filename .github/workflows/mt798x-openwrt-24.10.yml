@@ -99,7 +99,7 @@ jobs:
         git checkout v24.10.5
         sed -i '/routing/d' feeds.conf.default
         sed -i '1i src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git' feeds.conf.default
-        sed -i '1i src-git routing https://git.openwrt.org/feed/routing.git;openwrt-24.10' feeds.conf.default
+        
         
         ./scripts/feeds update -a
         ./scripts/feeds install -a
