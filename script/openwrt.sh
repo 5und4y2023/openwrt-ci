@@ -57,6 +57,11 @@ git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git packa
 git clone --depth 1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone --depth 1 https://github.com/sirpdboy/luci-app-eqosplus.git package/luci-app-eqosplus
 
+
+#修复TailScale配置文件冲突
+sed -i '/\/files/d'  package/tailscale/Makefile
+#修复rust
+sed -i 's/ci-llvm=true/ci-llvm=false/g' feeds/packages/lang/rust/Makefile
 #git clone --depth 1 -b openwrt-21.02 https://github.com/immortalwrt/luci.git package/imm21-luci
 #mv package/imm21-luci/applications/luci-app-filetransfer package/luci-app-filetransfer
 #sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-accesscontrol/Makefile
