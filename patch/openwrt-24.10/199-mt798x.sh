@@ -32,12 +32,12 @@ sed -i '/passwall/d' /etc/opkg/distfeeds.conf
 sed -ri '/check_signature/s@^[^#]@#&@' /etc/opkg.conf
 sed -i 's#downloads.openwrt.org#mirrors.pku.edu.cn/openwrt#g' /etc/opkg/distfeeds.conf
 sed -i '/filogic/d' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/openwrt/releases/24.10.4/targets/mediatek/filogic/kmods/6.6.110-1-6a9e125268c43e0bae8cecb014c8ab03' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz filogicpkg https://mirrors.pku.edu.cn/openwrt/releases/24.10.4/targets/mediatek/filogic/packages' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/openwrt/releases/24.10.5/targets/mediatek/filogic/kmods/6.6.119-1-6a9e125268c43e0bae8cecb014c8ab03' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz filogicpkg https://mirrors.pku.edu.cn/openwrt/releases/24.10.5/targets/mediatek/filogic/packages' /etc/opkg/distfeeds.conf
 echo > /etc/opkg/customfeeds.conf
-sed -i '$a src/gz kiddin9 https://dl.openwrt.ai/releases/24.10/packages/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
+sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/releases/25.12/packages/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
 
-sed -i 's/https/http/g' /etc/opkg/distfeeds.conf
+#sed -i 's/https/http/g' /etc/opkg/distfeeds.conf
 
 
 # wifi设置
@@ -48,18 +48,9 @@ uci set wireless.default_radio1.ssid=OpenWrt-5G
 #uci set wireless.default_radio0.key=password
 #uci set wireless.default_radio1.key=password
 uci commit wireless
-uci del network.wan6
-uci del network.lan.ip6assign
-uci del dhcp.lan.ra
-uci del dhcp.lan.ra_slaac
-uci del dhcp.lan.dns_service
-uci del dhcp.lan.dhcpv6
-uci del dhcp.lan.ndp
-uci del dhcp.lan.ra_flags
-uci add_list dhcp.lan.ra_flags='none'
-uci del network.globals.ula_prefix
 
-uci commit dhcp
+
+#uci commit dhcp
 uci commit network
 
 uci commit
