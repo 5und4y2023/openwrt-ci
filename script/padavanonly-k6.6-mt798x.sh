@@ -65,10 +65,11 @@ git clone --depth 1 https://github.com/sirpdboy/netspeedtest.git package/luci-ap
 git clone --depth 1 https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
 git clone --depth 1 https://github.com/AngelaCooljx/luci-theme-material3.git package/luci-theme-material3
 
-#rm -rf feeds/packages/net/{adguardhome,alist,tailscale}
+rm -rf feeds/packages/net/{adguardhome,alist,tailscale}
 git clone --depth 1 https://github.com/kenzok8/small-package.git package/small-package
-#mv package/small-package/adguardhome feeds/packages/net/adguardhome
-#mv package/small-package/luci-app-adguardhome package/luci-app-adguardhome
+mv package/small-package/adguardhome feeds/packages/net/adguardhome
+mv package/small-package/luci-app-adguardhome package/luci-app-adguardhome
+mv package/small-package/luci-app-clouddrive2 package/luci-app-clouddrive2
 mv package/small-package/luci-app-guest-wifi package/luci-app-guest-wifi
 mv package/small-package/luci-app-ikoolproxy package/luci-app-ikoolproxy
 #mv package/small-package/tailscale package/tailscale
