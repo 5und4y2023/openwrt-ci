@@ -57,3 +57,15 @@ mv package/kz8-small/wrtbwmon package/wrtbwmon
 mv package/kz8-small/luci-app-tailscale package/luci-app-tailscale
 mv package/kz8-small/tailscale package/tailscale
 rm -rf package/kz8-small
+
+rm -rf feeds/packages/net/mentohust
+git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages package/imm23pkg
+mv package/imm23pkg/net/mentohust package/mentohust
+rm -rf package/imm23pkg
+
+rm -rf feeds/luci/applications/luci-app-mentohust
+git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/luci package/imm23luci
+mv package/imm23luci/applications/luci-app-mentohust package/luci-app-mentohust
+rm -rf package/imm23luci
+
+
