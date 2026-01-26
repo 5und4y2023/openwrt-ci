@@ -1,4 +1,4 @@
-name: mt798x-fanchmwrtwrt-24.10
+name: mt798x-fanchmwrt-24.10
 # 脚本参考github/haiibo
 # Add a button to trigger the workflow
 on:
