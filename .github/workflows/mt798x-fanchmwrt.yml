@@ -1,4 +1,4 @@
-name: mt798x-immortalwrt-24.10
+name: mt798x-fanchmwrtwrt-24.10
 # 脚本参考github/haiibo
 # Add a button to trigger the workflow
 on:
@@ -6,8 +6,8 @@ on:
 
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-  REPO_BRANCH: openwrt-24.10
+  REPO_URL: https://github.com/fanchmwrt/fanchmwrt.git
+  REPO_BRANCH: fanchmwrt-24.10.4
   CONFIG_FILE: config/imm-mt798x-24.10
   DIY_SCRIPT: script/imm-mt798x-2410.sh
   CLASH_KERNEL: amd64
@@ -15,7 +15,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: true
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: mt798x-immortalwrt-24.10-official
+  FIRMWARE_TAG: mt798x-fanchmwrt-24.10.4
   TZ: Asia/Shanghai
 
 jobs:
