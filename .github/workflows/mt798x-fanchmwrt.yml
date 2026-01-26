@@ -118,7 +118,7 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - - name: edit md5
+    - name: edit md5
       run: |
         rm -rf $OPENWRT_PATH/.vermagic
         mv $GITHUB_WORKSPACE/vm/mt798x-fanchmwrt $OPENWRT_PATH/vermagic
