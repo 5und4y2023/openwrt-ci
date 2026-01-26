@@ -44,11 +44,13 @@ sed -i '$a src/gz core https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/t
 #chmod +x /root/open-wifi.sh
 
 uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
-uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
-#uci set wireless.default_radio1.encryption='psk2+ccmp'
-#uci set wireless.default_radio0.encryption='psk2+ccmp'
-#uci set wireless.default_radio1.key='66668888'
-#uci set wireless.default_radio0.key='66668888'
+#uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
+uci set wireless.default_radio0.ssid=TilTok-2.4G
+uci set wireless.default_radio1.ssid=TilTok-5G
+uci set wireless.default_radio1.encryption='psk2+ccmp'
+uci set wireless.default_radio0.encryption='psk2+ccmp'
+uci set wireless.default_radio1.key='TikTok888.'
+uci set wireless.default_radio0.key='TikTok888'
 #uci set wireless.default_radio0.macaddr='random'
 #uci set wireless.default_radio1.macaddr='random'
 uci commit wireless
