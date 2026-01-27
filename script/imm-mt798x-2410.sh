@@ -56,8 +56,8 @@ rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
 rm -rf feeds/packages/net/{mosdns,v2ray-geodata}
 git clone --depth 1 https://github.com/vernesong/OpenClash.git package/OpenClash
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/passwall
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
+git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/passwall
+git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/passwall2
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
 
@@ -68,6 +68,8 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-parentcontrol package/l
 git clone --depth 1 https://github.com/lwb1978/openwrt-gecoosac.git package/openwrt-gecoosac
 git clone --depth 1 https://github.com/sirpdboy/luci-app-eqosplus.git package/luci-app-eqosplus
 git clone --depth 1 -b js https://github.com/sirpdboy/luci-app-netspeedtest.git package/luci-app-netspeedtest
+
+git clone --depth 1 https://github.com/famchmwrt/fanchmwrt-packages.git package/fanchmwrt-packages
 
 rm -rf feeds/packages/net/{adguardhome,tailscale}
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
