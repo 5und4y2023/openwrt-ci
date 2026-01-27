@@ -42,13 +42,13 @@ sed -i '$a src/gz core https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/t
 
 
 #chmod +x /root/open-wifi.sh
-# $1$wNgpvIS2$qCR9RpHmzuIzAhG9O6CeB1
-
-sed -i 's/root::0:0:99999:7:::/root:$1$WDp.Dtrr$0fVVj97y48dwkYGhF0HkR0:0:0:99999:7:::/g' /etc/shadow
-sed -i 's/root:::0:99999:7:::/root:$1$WDp.Dtrr$0fVVj97y48dwkYGhF0HkR0:0:0:99999:7:::/g' /etc/shadow
 
 
-uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
+sed -i 's/root::0:0:99999:7:::/root:$1$cRj7frzl$Ee5KL0hj8Kb9paI5gXCsZ0:0:0:99999:7:::/g' /etc/shadow
+sed -i 's/root:::0:99999:7:::/root:$1$cRj7frzl$Ee5KL0hj8Kb9paI5gXCsZ0:0:0:99999:7:::/g' /etc/shadow
+
+
+#uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
 #uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
 uci set wireless.default_radio0.ssid=TilTok-2.4G
 uci set wireless.default_radio1.ssid=TilTok-5G
