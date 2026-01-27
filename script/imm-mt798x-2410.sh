@@ -70,6 +70,9 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-eqosplus.git package/lu
 git clone --depth 1 -b js https://github.com/sirpdboy/luci-app-netspeedtest.git package/luci-app-netspeedtest
 
 git clone --depth 1 https://github.com/fanchmwrt/fanchmwrt-packages.git package/fanchmwrt-packages
+git clone --depth 1 https://github.com/fanchmwrt/fanchmwrt.git package/fanchmwrt
+mv package/fanchmwrt/package/fcm package/fcm
+rm -rf package/fanchmwrt
 
 rm -rf feeds/packages/net/{adguardhome,tailscale}
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
