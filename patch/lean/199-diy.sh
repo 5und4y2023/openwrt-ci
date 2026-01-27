@@ -44,10 +44,10 @@ echo "DISTRIB_DESCRIPTION='OpenWrt  '" >> /etc/openwrt_release
 #sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 uci set wireless.default_radio0.ssid=OpenWrt-2.4G
 uci set wireless.default_radio1.ssid=OpenWrt-5G
-uci set wireless.default_radio0.encryption=psk2+ccmp
-uci set wireless.default_radio1.encryption=psk2+ccmp
-uci set wireless.default_radio0.key=password
-uci set wireless.default_radio1.key=password
+#uci set wireless.default_radio0.encryption=psk2+ccmp
+#uci set wireless.default_radio1.encryption=psk2+ccmp
+#uci set wireless.default_radio0.key=password
+#uci set wireless.default_radio1.key=password
 uci commit wireless
 uci commit
 /etc/init.d/network restart
