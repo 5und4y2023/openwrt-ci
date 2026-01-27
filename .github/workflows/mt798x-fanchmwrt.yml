@@ -8,8 +8,8 @@ on:
 env:
   REPO_URL: https://github.com/fanchmwrt/fanchmwrt.git
   REPO_BRANCH: fanchmwrt-24.10.4
-  CONFIG_FILE: config/imm-mt798x-24.10
-  DIY_SCRIPT: script/imm-mt798x-2410.sh
+  CONFIG_FILE: config/fanchmwrt-mt798x
+  DIY_SCRIPT: script/fanchmwrt.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
