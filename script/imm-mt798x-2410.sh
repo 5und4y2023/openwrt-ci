@@ -69,7 +69,7 @@ git clone --depth 1 https://github.com/lwb1978/openwrt-gecoosac.git package/open
 git clone --depth 1 https://github.com/sirpdboy/luci-app-eqosplus.git package/luci-app-eqosplus
 git clone --depth 1 -b js https://github.com/sirpdboy/luci-app-netspeedtest.git package/luci-app-netspeedtest
 
-git clone --depth 1 https://github.com/famchmwrt/fanchmwrt-packages.git package/fanchmwrt-packages
+git clone --depth 1 https://github.com/fanchmwrt/fanchmwrt-packages.git package/fanchmwrt-packages
 
 rm -rf feeds/packages/net/{adguardhome,tailscale}
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
