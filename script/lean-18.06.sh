@@ -1,4 +1,4 @@
-sed -i '/files\/arm\/index\.htm/d' package/lean/autocore/Makefile
+#sed -i '/files\/arm\/index\.htm/d' package/lean/autocore/Makefile
 sed -i 's/192.168.1.1/10.3.2.1/g' package/base-files/files/bin/config_generate
 sed -i "s/192\.168\.[0-9]*\.[0-9]*/10.3.2.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
 sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
