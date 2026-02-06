@@ -70,9 +70,8 @@ CONFIG_MTK_MT_AP_SUPPORT=m
 CONFIG_MTK_MT_DFS_SUPPORT=y
 CONFIG_MTK_MT_MAC=y
 CONFIG_MTK_MT_WIFI=m
-CONFIG_MTK_MT_WIFI_DRIVER_VERSION_7672=y
-CONFIG_MTK_MT_WIFI_FIRMWARE_PATH_MT7986="mt7986-fw-20240823"
-CONFIG_MTK_MT_WIFI_MT7986_20240823=y
+CONFIG_MTK_MT_WIFI_DRIVER_VERSION_7673=y
+CONFIG_MTK_MT_WIFI_MT7981_DEFAULT_FIRMWARE=y
 CONFIG_MTK_MT_WIFI_PATH="mt_wifi"
 CONFIG_MTK_MUMIMO_SUPPORT=y
 CONFIG_MTK_MU_RA_SUPPORT=y
@@ -271,8 +270,7 @@ CONFIG_first_card_name="MT7986"
 CONFIG_PACKAGE_luci-app-eqos-mtk=y
 CONFIG_PACKAGE_luci-app-mtwifi-cfg=y
 CONFIG_PACKAGE_luci-app-turboacc-mtk=y
-# CONFIG_PACKAGE_luci-app-upnp is not set
-CONFIG_PACKAGE_luci-theme-argon=y
+CONFIG_PACKAGE_luci-app-upnp=y
 # CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
 
 CONFIG_PACKAGE_luci-app-autoreboot=y
@@ -281,7 +279,7 @@ CONFIG_PACKAGE_luci-app-ttyd=y
 # CONFIG_PACKAGE_luci-app-ksmbd is not set
 # CONFIG_PACKAGE_luci-app-samba4 is not set
 
-CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall=n
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook is not set
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria is not set
@@ -302,7 +300,7 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin is not set
 
-CONFIG_PACKAGE_luci-app-ssr-plus=y
+CONFIG_PACKAGE_luci-app-ssr-plus=n
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client is not set
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client is not set
