@@ -10,18 +10,18 @@ uci commit
 #uci set luci.main.mediaurlbase=/luci-static/design
 #uci commit luci
 
-uci del dhcp.lan.ra
-uci del dhcp.lan.ra_slaac
-uci del dhcp.lan.dns_service
-uci del dhcp.lan.ra_flags
-uci del network.globals.ula_prefix
-uci del dhcp.lan.dhcpv6
-uci del dhcp.lan.ndp
-uci del network.wan6
-uci del network.lan.ip6assign
+#uci del dhcp.lan.ra
+#uci del dhcp.lan.ra_slaac
+#uci del dhcp.lan.dns_service
+#uci del dhcp.lan.ra_flags
+#uci del network.globals.ula_prefix
+#uci del dhcp.lan.dhcpv6
+#uci del dhcp.lan.ndp
+#uci del network.wan6
+#uci del network.lan.ip6assign
 
-uci commit dhcp
-uci commit network
+#uci commit dhcp
+#uci commit network
 sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
 
 sed -i '/helloworld/d' /etc/opkg/distfeeds.conf
@@ -32,7 +32,7 @@ sed -i '/smpackage/d' /etc/opkg/distfeeds.conf
 sed -i '/kwrt/d' /etc/opkg/distfeeds.conf
 sed -i '/luci/d' /etc/opkg/distfeeds.conf
 #sed -i '$a src/gz openwrt_luci https://mirrors.pku.edu.cn/immortalwrt/releases/18.06-k5.4-SNAPSHOT/packages/mipsel_24kc/luci' /etc/opkg/distfeeds.conf
-#sed -i '$a src/gz #18.06_luci https://mirrors.pku.edu.cn/immortalwrt/releases/18.06-k5.4-SNAPSHOT/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_luci https://mirrors.pku.edu.cn/immortalwrt/releases/18.06-k5.4-SNAPSHOT/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
 
 date_version=$(date +"%Y.%m.%d")
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
