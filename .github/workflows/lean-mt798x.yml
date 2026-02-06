@@ -7,8 +7,8 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
-  CONFIG_FILE: config/lean-mt7981
-  DIY_SCRIPT: script/lean-23.05.sh
+  CONFIG_FILE: config/lean-mt7986
+  DIY_SCRIPT: script/lean-18.06.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
