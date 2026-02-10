@@ -61,8 +61,8 @@ rm -rf feeds/luci/applications/{luci-app-openclash,luci-app-passwall,luci-app-ss
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
+git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/luci-app-passwall2
 
 git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/openlist
 #git clone --depth 1 https://github.com/gdy666/luci-app-lucky.git package/luci-app-lucky
