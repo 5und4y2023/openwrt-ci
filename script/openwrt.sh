@@ -56,7 +56,10 @@ git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/lu
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 git clone --depth 1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone --depth 1 https://github.com/sirpdboy/luci-app-eqosplus.git package/luci-app-eqosplus
-
+git clone --depth 1 https://github.com/kenzok8/small-package.git package/kz8-small
+mv package/kz8-small/nps package/nps
+mv package/kz8-small/luci-app-npc package/luci-app-npc
+rm -rf package/kz8-small
 
 #修复TailScale配置文件冲突
 sed -i '/\/files/d'  package/tailscale/Makefile
