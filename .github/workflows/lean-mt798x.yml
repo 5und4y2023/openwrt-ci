@@ -96,8 +96,8 @@ jobs:
     - name: Install Feeds(安装feeds)
       run: |
         cd $OPENWRT_PATH
-        sed -i '/luci/d' feeds.conf.default
-        sed -i '2i src-git luci https://github.com/coolsnowwolf/luci' feeds.conf.default
+        #sed -i '/luci/d' feeds.conf.default
+        #sed -i '2i src-git luci https://github.com/coolsnowwolf/luci' feeds.conf.default
         sed -i '1i src-git luci_app_ssrp https://github.com/fw876/helloworld.git' feeds.conf.default
         sed -i '1i src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git' feeds.conf.default
         ./scripts/feeds update -a
