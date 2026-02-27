@@ -27,8 +27,8 @@ sed -i '/modem/d' /etc/opkg/distfeeds.conf
 sed -ri '/check_signature/s@^[^#]@#&@' /etc/opkg.conf
 sed -i 's#downloads.immortalwrt.org#mirrors.pku.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
 sed -i '/mediatek/d' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/targets/mediatek/filogic/kmods/6.6.110-1-927b5064be0608a0f5695442c79b0938' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz core https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/targets/mediatek/filogic/packages' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.5/targets/mediatek/filogic/kmods/6.6.122-1-db54f778a3b2b2dcbe4dad7cd73274c0' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz core https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.5/targets/mediatek/filogic/packages' /etc/opkg/distfeeds.conf
 
 #echo > /etc/opkg/distfeeds.conf
 #sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/targets/mediatek/filogic/kmods/6.6.110-1-927b5064be0608a0f5695442c79b0938' /etc/opkg/distfeeds.conf
@@ -38,24 +38,15 @@ sed -i '$a src/gz core https://mirrors.pku.edu.cn/immortalwrt/releases/24.10.4/t
 #sed -i '$a src/gz openwrt_packages https://mirrors.pku.edu.cn/openwrt/releases/24.10.4/packages/aarch64_cortex-a53/packages' /etc/opkg/distfeeds.conf
 #sed -i '$a src/gz openwrt_routing https://mirrors.pku.edu.cn/openwrt/releases/24.10.4/packages/aarch64_cortex-a53/routing' /etc/opkg/distfeeds.conf
 #sed -i '$a src/gz openwrt_telephony https://mirrors.pku.edu.cn/openwrt/releases/24.10.4/packages/aarch64_cortex-a53/telephony' /etc/opkg/distfeeds.conf
-#sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/packages-24.10/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
+sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/packages-24.10/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
 
 
-#chmod +x /root/open-wifi.sh
-
-
-sed -i 's/root::0:0:99999:7:::/root:$1$cRj7frzl$Ee5KL0hj8Kb9paI5gXCsZ0:0:0:99999:7:::/g' /etc/shadow
-sed -i 's/root:::0:99999:7:::/root:$1$cRj7frzl$Ee5KL0hj8Kb9paI5gXCsZ0:0:0:99999:7:::/g' /etc/shadow
-
-
-#uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
-#uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
-uci set wireless.default_radio0.ssid=TilTok-2.4G
-uci set wireless.default_radio1.ssid=TilTok-5G
-uci set wireless.default_radio1.encryption='psk2+ccmp'
-uci set wireless.default_radio0.encryption='psk2+ccmp'
-uci set wireless.default_radio1.key='TikTok888.'
-uci set wireless.default_radio0.key='TikTok888'
+uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
+uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
+#uci set wireless.default_radio1.encryption='psk2+ccmp'
+#uci set wireless.default_radio0.encryption='psk2+ccmp'
+#uci set wireless.default_radio1.key='TikTok888.'
+#uci set wireless.default_radio0.key='TikTok888'
 #uci set wireless.default_radio0.macaddr='random'
 #uci set wireless.default_radio1.macaddr='random'
 uci commit wireless
