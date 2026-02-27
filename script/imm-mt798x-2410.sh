@@ -1,9 +1,9 @@
 sed -i 's/192.168.1.1/10.3.2.1/g' package/base-files/files/bin/config_generate
 sed -i "s/192\.168\.[0-9]*\.[0-9]*/10.3.2.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
-
 #sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 #sed -i 's/ImmortalWrt/OpenWrt/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #sed -i 's/ImmortalWrt/OpenWrt/g' include/version.mk
+#sed -i 's/ImmortalWrt/OpenWrt/g' feeds/luci/modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js
 mv $GITHUB_WORKSPACE/patch/immortalwrt-24.10/199-mt798x.sh package/base-files/files/etc/uci-defaults/zz-111diy.sh
 #mv $GITHUB_WORKSPACE/patch/tiktok/open-32wifi.sh package/base-files/files/etc/uci-defaults/zz-222wifi.sh
 
@@ -73,10 +73,12 @@ git clone --depth 1 https://github.com/fanchmwrt/fanchmwrt.git package/fanchmwrt
 mv package/fanchmwrt/package/fcm package/fcm
 rm -rf package/fanchmwrt
 
-rm -rf feeds/packages/net/{adguardhome,tailscale}
+rm -rf feeds/packages/net/{adguardhome,tailscale,nps}
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
+mv package/kz8-small/nps package/nps
+mv package/kz8-small/luci-app-npc package/luci-app-npc
 mv package/kz8-small/luci-app-wrtbwmon package/luci-app-wrtbwmon
 mv package/kz8-small/wrtbwmon package/wrtbwmon
 mv package/kz8-small/homebox package/homebox
