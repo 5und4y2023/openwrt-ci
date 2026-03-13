@@ -29,6 +29,7 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-parentcontrol package/l
 git clone --depth 1 https://github.com/lwb1978/openwrt-gecoosac.git package/openwrt-gecoosac
 rm -rf package/lean/mentohust
 #git clone --depth 1 https://github.com/sbwml/luci-app-mentohust package/mentohust
+git clone --depth 1 https://github.com/inotdream/mt5700webui-openwrt-server.git  package/mt5700webui-openwrt-server
 
 
 rm -rf feeds/packages/lang/golang
