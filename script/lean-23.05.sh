@@ -13,6 +13,16 @@ mv $GITHUB_WORKSPACE/patch/lean/199-diy.sh package/base-files/files/etc/uci-defa
 # sed -i 's/0x0580000 0x7280000/0x580000 0x1cc00000/g' target/linux/mediatek/dts/mt7986a-netcore-n60-pro.dts
 mv $GITHUB_WORKSPACE/patch/lean/mt7981b-xiaomi_mi-router.dtsi target/linux/mediatek/dts/mt7981b-xiaomi_mi-router.dtsi
 
+if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
+    echo "✅ 已选择 luci-app-openclash，添加 openclash core"
+    mkdir -p files/etc/openclash/core
+    META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
+    wget -qO- $META_URL | tar xOz > files/etc/openclash/core/clash_meta
+    chmod +x files/etc/openclash/core/clash_meta
+else
+    echo "⚪️ 未选择 luci-app-openclash"
+fi
+
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
