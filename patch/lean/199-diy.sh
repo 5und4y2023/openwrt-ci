@@ -19,9 +19,9 @@ uci commit
 #uci del dhcp.lan.ndp
 #uci del network.wan6
 #uci del network.lan.ip6assign
-
+uci set network.lan.ipaddr=192.168.6.1
 #uci commit dhcp
-#uci commit network
+uci commit network
 sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
 
 sed -i '/helloworld/d' /etc/opkg/distfeeds.conf
