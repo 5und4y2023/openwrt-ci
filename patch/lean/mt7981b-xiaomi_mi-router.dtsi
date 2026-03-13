@@ -342,12 +342,12 @@
 
 			partition@600000 {
 				label = "ubi";
-				reg = <0x0600000 0x7000000>;
+				reg = <0x0600000 0xea00000>;
 			};
 
 			partition@7600000 {
 				label = "KF";
-				reg = <0x7600000 0x0040000>;
+				reg = <0xf000000 0x0040000>;
 				read-only;
 			};
 		};
