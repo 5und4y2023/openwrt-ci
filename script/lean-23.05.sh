@@ -11,6 +11,7 @@ sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' package/lea
 
 mv $GITHUB_WORKSPACE/patch/lean/199-diy.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
 # sed -i 's/0x0580000 0x7280000/0x580000 0x1cc00000/g' target/linux/mediatek/dts/mt7986a-netcore-n60-pro.dts
+mv $GITHUB_WORKSPACE/patch/lean/mt7981b-xiaomi_mi-router.dtsi target/linux/mediatek/dts/mt7981b-xiaomi_mi-router.dtsi
 
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
@@ -31,7 +32,7 @@ rm -rf package/lean/mentohust
 
 
 rm -rf feeds/packages/lang/golang
-git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
+git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 rm -rf feeds/luci/applications/{luci-app-openclash,luci-app-passwall,luci-app-passwall2,luci-app-mosdns}
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
