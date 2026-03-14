@@ -1,9 +1,11 @@
 sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 sed -i "s/192\.168\.[0-9]*\.[0-9]*/192.168.5.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
 
-sed -i 's/FanchmWrt/cookie/g' package/base-files/files/bin/config_generate
+#sed -i 's/FanchmWrt/cookie/g' package/base-files/files/bin/config_generate
+#sed -i 's/FanchmWrt/OpenWrt/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
+sed -i 's/FanchmWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/FanchmWrt/OpenWrt/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
-#sed -i 's/OpenWrt/OpenWrt/g' include/version.mk
+sed -i 's/OpenWrt/OpenWrt/g' include/version.mk
 mv $GITHUB_WORKSPACE/patch/fanchmwrt/199-mt798x.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
 
 if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
@@ -41,7 +43,7 @@ mv package/nas-packages/network/services/* package/nas-packages/
 rm -rf package/nas-packages/network
 
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
 rm -rf feeds/packages/net/{mosdns,v2ray-geodata}
 git clone --depth 1 https://github.com/vernesong/OpenClash.git package/OpenClash
