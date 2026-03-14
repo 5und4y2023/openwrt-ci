@@ -42,17 +42,15 @@ sed -i '$a src/gz openwrt_telephony https://mirrors.pku.edu.cn/openwrt/releases/
 sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/packages-25.12/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
 
 
-sed -i 's/root::0:0:99999:7:::/root:$1$y2IgmKjI$uhkjDM.X5BMHsbf11Azms1:0:0:99999:7:::/g' /etc/shadow
-sed -i 's/root:::0:99999:7:::/root:$1$y2IgmKjI$uhkjDM.X5BMHsbf11Azms1:0:0:99999:7:::/g' /etc/shadow
+#sed -i 's/root::0:0:99999:7:::/root:$1$y2IgmKjI$uhkjDM.X5BMHsbf11Azms1:0:0:99999:7:::/g' /etc/shadow
+#sed -i 's/root:::0:99999:7:::/root:$1$y2IgmKjI$uhkjDM.X5BMHsbf11Azms1:0:0:99999:7:::/g' /etc/shadow
 
-#uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
-#uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
-uci set wireless.default_radio0.ssid=TilTok-2.4G
-uci set wireless.default_radio1.ssid=TilTok-5G
-uci set wireless.default_radio1.encryption='psk2+ccmp'
-uci set wireless.default_radio0.encryption='psk2+ccmp'
-uci set wireless.default_radio1.key='TikTok888.'
-uci set wireless.default_radio0.key='TikTok888.'
+uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
+uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
+#uci set wireless.default_radio1.encryption='psk2+ccmp'
+#uci set wireless.default_radio0.encryption='psk2+ccmp'
+#uci set wireless.default_radio1.key='TikTok888.'
+#uci set wireless.default_radio0.key='TikTok888.'
 #uci set wireless.default_radio0.macaddr='random'
 #uci set wireless.default_radio1.macaddr='random'
 uci commit wireless
