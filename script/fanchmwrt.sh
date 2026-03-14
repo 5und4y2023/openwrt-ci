@@ -63,7 +63,7 @@ git clone --depth 1 -b js https://github.com/sirpdboy/luci-app-netspeedtest.git 
 
 
 rm -rf feeds/packages/net/{adguardhome,tailscale}
-git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
+git clone --depth 1 https://github.com/kenzok8/jell.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
 mv package/kz8-small/luci-app-wrtbwmon package/luci-app-wrtbwmon
