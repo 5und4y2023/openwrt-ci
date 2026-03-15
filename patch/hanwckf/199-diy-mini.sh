@@ -20,7 +20,7 @@ uci del dhcp.lan.ra_flags
 uci add_list dhcp.lan.ra_flags='none'
 uci set network.lan.delegate='0'
 uci set network.lan.ip6ifaceid='random'
-
+uci set network.lan.ipaddr='192.168.100.1'
 
 uci commit dhcp
 uci commit network
