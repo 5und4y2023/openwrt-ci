@@ -53,10 +53,10 @@ uci set wireless.default_radio1.ssid=TikTok-5G
 
 
 
-#uci set wireless.default_radio1.encryption='psk2+ccmp'
-#uci set wireless.default_radio0.encryption='psk2+ccmp'
-#uci set wireless.default_radio1.key='TikTok888.'
-#uci set wireless.default_radio0.key='TikTok888.'
+uci set wireless.default_radio1.encryption='psk2+ccmp'
+uci set wireless.default_radio0.encryption='psk2+ccmp'
+uci set wireless.default_radio1.key='TikTok888.'
+uci set wireless.default_radio0.key='TikTok888.'
 #uci set wireless.default_radio0.macaddr='random'
 #uci set wireless.default_radio1.macaddr='random'
 uci commit wireless
