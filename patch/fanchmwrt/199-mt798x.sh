@@ -47,6 +47,12 @@ sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/packages-25.12/aarch64_cortex-a
 
 uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
 uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
+
+uci set wireless.default_radio0.ssid=TikTok-2.4G
+uci set wireless.default_radio1.ssid=TikTok-5G
+
+
+
 #uci set wireless.default_radio1.encryption='psk2+ccmp'
 #uci set wireless.default_radio0.encryption='psk2+ccmp'
 #uci set wireless.default_radio1.key='TikTok888.'
