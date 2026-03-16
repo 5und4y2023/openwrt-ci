@@ -19,10 +19,10 @@ uci commit
 #uci del dhcp.lan.ndp
 #uci del network.wan6
 #uci del network.lan.ip6assign
-uci set network.lan.ipaddr=192.168.100.1
+#uci set network.lan.ipaddr=192.168.100.1
 #uci commit dhcp
-uci commit network
-sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
+#uci commit network
+sed -i 's#mirrors.tencent.com/lede#mirrors.vsean.net/openwrt#g' /etc/opkg/distfeeds.conf
 
 sed -i '/helloworld/d' /etc/opkg/distfeeds.conf
 sed -i '/ssrp/d' /etc/opkg/distfeeds.conf
@@ -34,12 +34,13 @@ sed -i '/luci/d' /etc/opkg/distfeeds.conf
 #sed -i '$a src/gz openwrt_luci https://mirrors.pku.edu.cn/immortalwrt/releases/18.06-k5.4-SNAPSHOT/packages/mipsel_24kc/luci' /etc/opkg/distfeeds.conf
 #sed -i '$a src/gz openwrt_luci https://mirrors.pku.edu.cn/immortalwrt/releases/18.06-k5.4-SNAPSHOT/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
 echo > /etc/opkg/distfeeds.conf
-sed -i '$a src/gz openwrt_base https://mirrors.pku.edu.cn/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/base' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz openwrt_luci https://mirrors.pku.edu.cn/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz openwrt_packages https://mirrors.pku.edu.cn/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/packages' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz openwrt_routing https://mirrors.pku.edu.cn/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/routing' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz openwrt_telephony https://mirrors.pku.edu.cn/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/telephony' /etc/opkg/distfeeds.conf
-sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/packages-24.10/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
+sed -i '$a src/gz openwrt_base https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/base' /etc/opkg/distfeeds.conf
+#sed -i '$a src/gz openwrt_luci https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_luci https://mirrors.vsean.net/immortalwrt/releases/18.06-k5.4-SNAPSHOT/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_packages https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/packages' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_routing https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/routing' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/telephony' /etc/opkg/distfeeds.conf
+sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/packages-25.12/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
 
 date_version=$(date +"%Y.%m.%d")
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
