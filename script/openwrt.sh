@@ -21,7 +21,7 @@ fi
 
 
 #tr3000大分区112m
-#sed -i 's/0x4000000/0x7000000/g' target/linux/mediatek/dts/mt7981b-cudy-tr3000-v1.dts
+sed -i 's/0x4000000/0x7000000/g' target/linux/mediatek/dts/mt7981b-cudy-tr3000-v1.dts
 
 
 #添加编译日期
