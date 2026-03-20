@@ -32,8 +32,8 @@ sed -i '/passwall/d' /etc/opkg/distfeeds.conf
 sed -ri '/check_signature/s@^[^#]@#&@' /etc/opkg.conf
 sed -i 's#downloads.openwrt.org#mirrors.pku.edu.cn/openwrt#g' /etc/opkg/distfeeds.conf
 sed -i '/filogic/d' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/openwrt/releases/24.10.5/targets/mediatek/filogic/kmods/6.6.119-1-6a9e125268c43e0bae8cecb014c8ab03' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz filogicpkg https://mirrors.pku.edu.cn/openwrt/releases/24.10.5/targets/mediatek/filogic/packages' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz kmods https://mirrors.pku.edu.cn/openwrt/releases/24.10.6/targets/mediatek/filogic/kmods/6.6.127-1-43cbcde0affaaf16309bb4ab09799e9a' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz filogicpkg https://mirrors.pku.edu.cn/openwrt/releases/24.10.6/targets/mediatek/filogic/packages' /etc/opkg/distfeeds.conf
 echo > /etc/opkg/customfeeds.conf
 sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/releases/25.12/packages/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
 
