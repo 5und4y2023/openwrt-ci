@@ -35,8 +35,8 @@ sed -i '/luci/d' /etc/opkg/distfeeds.conf
 #sed -i '$a src/gz openwrt_luci https://mirrors.pku.edu.cn/immortalwrt/releases/18.06-k5.4-SNAPSHOT/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
 echo > /etc/opkg/distfeeds.conf
 sed -i '$a src/gz openwrt_base https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/base' /etc/opkg/distfeeds.conf
-#sed -i '$a src/gz openwrt_luci https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
-sed -i '$a src/gz openwrt_luci https://mirrors.vsean.net/immortalwrt/releases/18.06-k5.4-SNAPSHOT/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_luci https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
+#sed -i '$a src/gz openwrt_luci https://mirrors.vsean.net/immortalwrt/releases/18.06-k5.4-SNAPSHOT/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
 sed -i '$a src/gz openwrt_packages https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/packages' /etc/opkg/distfeeds.conf
 sed -i '$a src/gz openwrt_routing https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/routing' /etc/opkg/distfeeds.conf
 sed -i '$a src/gz openwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.5/packages/aarch64_cortex-a53/telephony' /etc/opkg/distfeeds.conf
