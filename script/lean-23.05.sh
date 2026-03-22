@@ -62,7 +62,7 @@ rm -rf package/nas-packages/network
 
 rm -rf feeds/packages/net/{adguardhome,alist,easytier,lucky,tailscale}
 rm -rf feeds/luci/applications/{luci-app-adguardhome,luci-app-alist,luci-app-easytier,luci-app-lucky,luci-app-tailscale}
-git clone --depth 1 https://github.com/kenzok8/small-package.git package/kz8-small
+git clone --depth 1 https://github.com/kenzok8/jell.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
 mv package/kz8-small/easytier package/easytier
@@ -70,13 +70,17 @@ mv package/kz8-small/luci-app-easytier package/luci-app-easytier
 mv package/kz8-small/lucky package/lucky
 mv package/kz8-small/luci-app-lucky package/luci-app-lucky
 mv package/kz8-small/luci-app-npc package/luci-app-npc
+mv package/kz8-small/luci-app-pptp-server package/luci-app-pptp-server
+mv package/kz8-small/luci-app-pptpd package/luci-app-pptpd
+mv package/kz8-small/luci-app-socat package/luci-app-socat
 mv package/kz8-small/luci-app-wrtbwmon package/luci-app-wrtbwmon
 mv package/kz8-small/wrtbwmon package/wrtbwmon
 mv package/kz8-small/luci-app-tailscale package/luci-app-tailscale
 mv package/kz8-small/tailscale package/tailscale
 rm -rf package/kz8-small
-
-
+git clone --depth 1 https://github.com/kenzok8/small.git package/small
+mv package/small/luci-app-homeproxy package/luci-app-homeproxy
+rm -rf package/small
 #git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages package/imm23pkg
 #mv package/imm23pkg/net/mentohust package/mentohust
 #rm -rf package/imm23pkg
