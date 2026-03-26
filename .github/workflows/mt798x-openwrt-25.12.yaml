@@ -8,7 +8,7 @@ env:
   REPO_URL: https://github.com/openwrt/openwrt.git
   REPO_BRANCH: openwrt-25.12
   CONFIG_FILE: config/openwrt-mt798x-25.12
-  DIY_SCRIPT: script/openwrt.sh
+  DIY_SCRIPT: script/openwrt-25.12.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
