@@ -14,7 +14,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: true
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: mt798x-openwrt-24.10-official
+  FIRMWARE_TAG: mt798x-openwrt-25.12-official
   TZ: Asia/Shanghai
 
 jobs:
