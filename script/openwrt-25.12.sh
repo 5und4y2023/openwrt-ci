@@ -31,7 +31,7 @@ sed -i "s/%C/\/ Complied on $(date +"%Y.%m.%d")/g" package/base-files/files/etc/
 
 git clone --depth 1 -b openwrt-25.12 https://github.com/immortalwrt/luci.git package/mypkg/imm25-luci
 mv package/mypkg/imm25-luci/applications/luci-app-autoreboot package/mypkg/luci-app-autoreboot
-mv package/mypkg/imm25-luci/applications/luci-app-cpufreq package/mypkg/luci-app-cpufreq
+#mv package/mypkg/imm25-luci/applications/luci-app-cpufreq package/mypkg/luci-app-cpufreq
 mv package/mypkg/imm25-luci/applications/luci-app-diskman package/mypkg/luci-app-diskman
 mv package/mypkg/imm25-luci/applications/luci-app-homeproxy package/mypkg/luci-app-homeproxy
 mv package/mypkg/imm25-luci/applications/luci-app-ramfree package/mypkg/luci-app-ramfree
