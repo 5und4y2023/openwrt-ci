@@ -38,8 +38,9 @@ sed -i '$a https://mirrors.pku.edu.cn/openwrt/releases/25.12.1/targets/mediatek/
 
 
 # wifi设置
-uci set wireless.default_radio0.ssid=OpenWrt-2.4G
-uci set wireless.default_radio1.ssid=OpenWrt-5G
+WIFINAME=$(ip link show br-lan 2>/dev/null | awk '/link\/ether/{split($2,m,":");print toupper(m[5]m[6])}')
+uci set wireless.default_radio0.ssid=WiFi-${WIFINAME}-2.4G
+uci set wireless.default_radio1.ssid=WiFi-${WIFINAME}-5G
 #uci set wireless.default_radio0.encryption=psk2+ccmp
 #uci set wireless.default_radio1.encryption=psk2+ccmp
 #uci set wireless.default_radio0.key=password
