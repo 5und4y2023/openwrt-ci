@@ -1,6 +1,6 @@
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_filogic=y
-CONFIG_TARGET_mediatek_filogic_DEVICE_netcore_n60-pro=y
+CONFIG_TARGET_mediatek_filogic_DEVICE_netcore_n60-pro=n
 
 CONFIG_TARGET_MULTI_PROFILE=y
 CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_cmcc_rax3000m=y
