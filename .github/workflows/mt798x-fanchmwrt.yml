@@ -1,4 +1,4 @@
-name: mt798x-fanchmwrt-24.10
+name: mt798x-fanchmwrt-25.12
 # 脚本参考github/haiibo
 # Add a button to trigger the workflow
 on:
@@ -7,7 +7,7 @@ on:
 
 env:
   REPO_URL: https://github.com/fanchmwrt/fanchmwrt.git
-  REPO_BRANCH: fanchmwrt-24.10.4
+  REPO_BRANCH: fanchmwrt-25.12.2
   CONFIG_FILE: config/fanchmwrt-mt798x
   DIY_SCRIPT: script/fanchmwrt.sh
   CLASH_KERNEL: amd64
@@ -15,7 +15,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: true
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: mt798x-fanchmwrt-24.10.4
+  FIRMWARE_TAG: mt798x-fanchmwrt-25.12.2
   TZ: Asia/Shanghai
 
 jobs:
@@ -122,8 +122,8 @@ jobs:
         rm -rf $OPENWRT_PATH/.vermagic
         mv $GITHUB_WORKSPACE/vm/mt798x-fanchmwrt $OPENWRT_PATH/vermagic
         cd $OPENWRT_PATH
-        sed -i '130d' include/kernel-defaults.mk
-        sed -i '130i\\tcp $(TOPDIR)/vermagic $(LINUX_DIR)/.vermagic' include/kernel-defaults.mk
+        sed -i '129d' include/kernel-defaults.mk
+        sed -i '129i\\tcp $(TOPDIR)/vermagic $(LINUX_DIR)/.vermagic' include/kernel-defaults.mk
         sed -i '30d' package/kernel/linux/Makefile
         sed -i '30i\  STAMP_BUILT:=$(STAMP_BUILT)_$(shell cat $(LINUX_DIR)/.vermagic)' package/kernel/linux/Makefile
 
