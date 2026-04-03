@@ -1,18 +1,15 @@
-#sed -i 's/e251189ed315f22ab63dc6f17b03178676e10c21fff0cdd863b294a3c51a1b5b/c48331dcfda73d16cb12a0aa069eb62a5c370428c7559011a7284a9ef67d3089/g' package/libs/ustream-ssl/Makefile
-#sed -i '/files\/arm\/index\.htm/d' package/lean/autocore/Makefile
-
-sed -i 's/192.168.1.1/10.3.2.1/g' package/base-files/files/bin/config_generate
-sed -i "s/192\.168\.[0-9]*\.[0-9]*/10.3.2.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
+sed -i 's/192.168.1.1/10.1.1.1/g' package/base-files/files/bin/config_generate
+sed -i "s/192\.168\.[0-9]*\.[0-9]*/10.1.1.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
+sed -i 's/192.168.1.1/10.1.1.1/g' package/base-files/luci/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/10.3.2.1/g' package/base-files/luci/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/base-files/luci/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
-sed -i '/openwrt_release/d' package/lean/default-settings/files/zzz-default-settings
-sed -i '/tencent.com/d' package/lean/default-settings/files/zzz-default-settings
-sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
-mv $GITHUB_WORKSPACE/patch/lean/199-diy.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
+sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
+sed -i '/openwrt_release/d' package/lean/default-settings/files/zzz-default-settings
+sed -i '/os-release/d' package/lean/default-settings/files/zzz-default-settings
+sed -i 's#mirrors.tencent.com/lede#mirror.nju.edu.cn/immortalwrt#g' package/lean/default-settings/files/zzz-default-settings
+mv $GITHUB_WORKSPACE/patch/lean/199-diy.sh package/base-files/files/etc/uci-defaults/zz-diy
 
 if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
     echo "✅ 已选择 luci-app-openclash，添加 openclash core"
