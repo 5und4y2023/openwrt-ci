@@ -1,15 +1,16 @@
-sed -i 's/192.168.1.1/10.3.2.1/g' package/base-files/files/bin/config_generate
-sed -i "s/192\.168\.[0-9]*\.[0-9]*/10.3.2.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
+sed -i 's/192.168.1.1/10.1.1.1/g' package/base-files/files/bin/config_generate
+sed -i "s/192\.168\.[0-9]*\.[0-9]*/10.1.1.1/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
+sed -i 's/192.168.1.1/10.1.1.1/g' package/base-files/luci/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/10.3.2.1/g' package/base-files/luci/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/base-files/luci/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
-sed -i '/openwrt_release/d' package/lean/default-settings/files/zzz-default-settings
 sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
-sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' package/lean/default-settings/files/zzz-default-settings
+sed -i '/openwrt_release/d' package/lean/default-settings/files/zzz-default-settings
+sed -i '/os-release/d' package/lean/default-settings/files/zzz-default-settings
+sed -i 's#mirrors.tencent.com/lede#mirror.nju.edu.cn/immortalwrt#g' package/lean/default-settings/files/zzz-default-settings
 
-mv $GITHUB_WORKSPACE/patch/lean/199-diy.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
+mv $GITHUB_WORKSPACE/patch/lean/199-diy-25.12.sh package/base-files/files/etc/uci-defaults/zz-diy.sh
 # sed -i 's/0x0580000 0x7280000/0x580000 0x1cc00000/g' target/linux/mediatek/dts/mt7986a-netcore-n60-pro.dts
 #mv $GITHUB_WORKSPACE/patch/lean/mt7981b-xiaomi_mi-router.dtsi target/linux/mediatek/dts/mt7981b-xiaomi_mi-router.dtsi
 
@@ -37,9 +38,6 @@ rm -rf feeds/packages/net/open-app-filter
 git clone --depth 1 https://github.com/destan19/OpenAppFilter.git  package/oaf
 git clone --depth 1 https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 git clone --depth 1 https://github.com/lwb1978/openwrt-gecoosac.git package/openwrt-gecoosac
-rm -rf package/lean/mentohust
-#git clone --depth 1 https://github.com/sbwml/luci-app-mentohust package/mentohust
-git clone --depth 1 https://github.com/inotdream/mt5700webui-openwrt-server.git  package/mt5700webui-openwrt-server
 
 
 rm -rf feeds/packages/lang/golang
@@ -78,16 +76,5 @@ mv package/kz8-small/wrtbwmon package/wrtbwmon
 mv package/kz8-small/luci-app-tailscale package/luci-app-tailscale
 mv package/kz8-small/tailscale package/tailscale
 rm -rf package/kz8-small
-git clone --depth 1 https://github.com/kenzok8/small.git package/small
-mv package/small/luci-app-homeproxy package/luci-app-homeproxy
-rm -rf package/small
-#git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages package/imm23pkg
-#mv package/imm23pkg/net/mentohust package/mentohust
-#rm -rf package/imm23pkg
-
-#rm -rf feeds/luci/applications/luci-app-mentohust
-#git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/luci package/imm23luci
-#mv package/imm23luci/applications/luci-app-mentohust package/luci-app-mentohust
-#rm -rf package/imm23luci
 
 
