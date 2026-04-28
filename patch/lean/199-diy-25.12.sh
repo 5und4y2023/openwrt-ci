@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# 设置所有网口可访问网页终端
+uci delete ttyd.@ttyd[0].interface
+
+# 设置所有网口可连接 SSH
+uci set dropbear.@dropbear[0].Interface=''
+uci commit
+# 设置主题
+#uci set luci.main.mediaurlbase=/luci-static/design
+#uci commit luci
+
+sed -i '/helloworld/d' /etc/opkg/distfeeds.conf
+sed -i '/ssrp/d' /etc/opkg/distfeeds.conf
+sed -i '/passwall/d' /etc/opkg/distfeeds.conf
+sed -i '/targets/d' /etc/opkg/distfeeds.conf
+sed -i '/QModem/d' /etc/opkg/distfeeds.conf
+echo > /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_base https://dl.openwrt.ai/releases/25.12/packages/aarch64_cortex-a53/base' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_luci https://dl.openwrt.ai/releases/25.12/packages/aarch64_cortex-a53/luci' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_packages https://dl.openwrt.ai/releases/25.12/packages/aarch64_cortex-a53/packages' /etc/opkg/distfeeds.conf
+sed -i '$a src/gz openwrt_routing https://dl.openwrt.ai/releases/25.12/packages/aarch64_cortex-a53/routing' /etc/opkg/distfeeds.conf
+sed -i '$a #src/gz kiddin9 https://dl.openwrt.ai/releases/25.12/packages/aarch64_cortex-a53/kiddin9' /etc/opkg/customfeeds.conf
+
+date_version=$(date +"%Y.%m.%d")
+sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
+echo "DISTRIB_REVISION='V${date_version}'" >> /etc/openwrt_release
+sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='OpenWrt  '" >> /etc/openwrt_release
+
+#sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+#sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+uci set wireless.default_radio0.ssid=OpenWrt-2.4G
+uci set wireless.default_radio1.ssid=OpenWrt-5G
+#uci set wireless.default_radio0.encryption=psk2+ccmp
+#uci set wireless.default_radio1.encryption=psk2+ccmp
+#uci set wireless.default_radio0.key=password
+#uci set wireless.default_radio1.key=password
+uci commit wireless
+uci commit
+/etc/init.d/network restart
+exit 0
