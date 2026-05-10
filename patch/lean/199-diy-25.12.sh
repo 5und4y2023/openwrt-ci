@@ -7,8 +7,8 @@ uci delete ttyd.@ttyd[0].interface
 uci set dropbear.@dropbear[0].Interface=''
 uci commit
 # 设置主题
-#uci set luci.main.mediaurlbase=/luci-static/design
-#uci commit luci
+uci set luci.main.mediaurlbase='/luci-static/argon'
+uci commit luci
 
 sed -i '/helloworld/d' /etc/opkg/distfeeds.conf
 sed -i '/ssrp/d' /etc/opkg/distfeeds.conf
