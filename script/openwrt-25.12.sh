@@ -29,7 +29,7 @@ sed -i 's/0x4000000/0x7000000/g' target/linux/mediatek/dts/mt7981b-cudy-tr3000-v
 sed -i "s/%C/\/ Complied on $(date +"%Y.%m.%d")/g" package/base-files/files/usr/lib/os-release
 sed -i "s/%C/\/ Complied on $(date +"%Y.%m.%d")/g" package/base-files/files/etc/openwrt_release
 
-git clone --depth 1 -b openwrt-25.12 https://github.com/immortalwrt/luci.git package/mypkg/imm25-luci
+git clone --depth=1 -b openwrt-25.12 https://github.com/immortalwrt/luci.git package/mypkg/imm25-luci
 mv package/mypkg/imm25-luci/applications/luci-app-autoreboot package/mypkg/luci-app-autoreboot
 #mv package/mypkg/imm25-luci/applications/luci-app-cpufreq package/mypkg/luci-app-cpufreq
 mv package/mypkg/imm25-luci/applications/luci-app-diskman package/mypkg/luci-app-diskman
@@ -46,9 +46,9 @@ sed -i "s/+ ' \/ ' : '') + (luciversion ||/:/g" feeds/luci/modules/luci-mod-stat
 
 
 # iStore
-git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
-git clone --depth 1 -b master https://github.com/linkease/nas-packages.git package/nas-packages
-git clone --depth 1 -b main https://github.com/linkease/nas-packages-luci.git package/nas-luci
+git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
+git clone --depth=1 -b master https://github.com/linkease/nas-packages.git package/nas-packages
+git clone --depth=1 -b main https://github.com/linkease/nas-packages-luci.git package/nas-luci
 mv package/nas-packages/network/services/* package/nas-packages/
 rm -rf package/nas-packages/network
 
@@ -57,23 +57,23 @@ git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages
 #find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 #find ./ | grep Makefile | grep mosdns | xargs rm -f
 rm -rf feeds/packages/net/{mosdns,v2ray-geodata}
-git clone --depth 1 https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
-#git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
-git clone --depth 1 https://github.com/vernesong/OpenClash.git package/OpenClash
-git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
-git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/passwall
-git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/passwall2
+#git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
+git clone --depth=1 https://github.com/vernesong/OpenClash.git package/OpenClash
+git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
+git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/passwall
+git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/passwall2
 rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-openclash}
 
-git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
-git clone --depth 1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-git clone --depth 1 https://github.com/sirpdboy/luci-app-eqosplus.git package/luci-app-eqosplus
+git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus.git package/luci-app-eqosplus
 
 rm -rf feeds/packages/net/adguardhome
-git clone --depth 1 https://github.com/kenzok8/jell.git package/kz8-small
+git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
 mv package/kz8-small/nps package/nps
@@ -84,7 +84,7 @@ rm -rf package/kz8-small
 sed -i '/\/files/d'  package/tailscale/Makefile
 #修复rust
 sed -i 's/ci-llvm=true/ci-llvm=false/g' feeds/packages/lang/rust/Makefile
-#git clone --depth 1 -b openwrt-21.02 https://github.com/immortalwrt/luci.git package/imm21-luci
+#git clone --depth=1 -b openwrt-21.02 https://github.com/immortalwrt/luci.git package/imm21-luci
 #mv package/imm21-luci/applications/luci-app-filetransfer package/luci-app-filetransfer
 #sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-accesscontrol/Makefile
 #sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-filetransfer/Makefile
