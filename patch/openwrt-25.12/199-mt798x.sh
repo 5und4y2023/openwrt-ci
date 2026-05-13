@@ -31,8 +31,8 @@ sed -i '/modem/d' /etc/apk/repositories.d/distfeeds.list
 sed -i '/passwall/d' /etc/apk/repositories.d/distfeeds.list
 sed -i 's#downloads.openwrt.org#mirrors.pku.edu.cn/openwrt#g' /etc/apk/repositories.d/distfeeds.list
 sed -i '/filogic/d' /etc/apk/repositories.d/distfeeds.list
-sed -i '$a https://mirrors.pku.edu.cn/openwrt/releases/25.12.2/targets/mediatek/filogic/kmods/6.12.74-1-60d938adcb727697d3015e4285d4c290/packages.adb' /etc/apk/repositories.d/distfeeds.list
-sed -i '$a https://mirrors.pku.edu.cn/openwrt/releases/25.12.2/targets/mediatek/filogic/packages/packages.adb' /etc/apk/repositories.d/distfeeds.list
+sed -i '$a https://mirrors.pku.edu.cn/openwrt/releases/25.12.3/targets/mediatek/filogic/kmods/6.12.85-1-82967b4996cac5f682958cca092c9ab1/packages.adb' /etc/apk/repositories.d/distfeeds.list
+sed -i '$a https://mirrors.pku.edu.cn/openwrt/releases/25.12.3/targets/mediatek/filogic/packages/packages.adb' /etc/apk/repositories.d/distfeeds.list
 
 #sed -i 's/https/http/g' /etc/opkg/distfeeds.conf
 
