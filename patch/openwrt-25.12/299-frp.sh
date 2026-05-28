@@ -104,5 +104,5 @@ uci commit network
 uci commit wireless
 uci commit
 
-/etc/init.d/network restart
+# /etc/init.d/network restart
 exit 0
