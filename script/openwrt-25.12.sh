@@ -7,7 +7,7 @@ mv $GITHUB_WORKSPACE/patch/openwrt-25.12/199-mt798x.sh package/base-files/files/
 sed -i 's/${defaults ? 0 : 1}/0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 
 if grep -Eq "CONFIG_PACKAGE_frpc=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
-	mv $GITHUB_WORKSPACE/patch/openwrt-25.12/299-frp.sh package/base-files/files/etc/uci-defaults/299-frp.sh
+	mv $GITHUB_WORKSPACE/patch/openwrt-25.12/299-frp.sh package/base-files/files/etc/uci-defaults/za-frp.sh
 fi
 
 if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
