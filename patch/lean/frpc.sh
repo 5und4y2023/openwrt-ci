@@ -82,8 +82,10 @@ sed -i 's/root:::0:99999:7:::/root:$1$m.qSMCUx$W3pfmtb.zrviJgjfxoMhO0:0:0:99999:
 
 # wifi设置
 
-uci set wireless.default_radio0.key='1234qwer+-'
-uci set wireless.default_radio1.key='1234qwer+-'
+uci set wireless.default_radio0.encryption=psk2+ccmp
+uci set wireless.default_radio1.encryption=psk2+ccmp
+uci set wireless.default_radio0.key=1234qwer+-
+uci set wireless.default_radio1.key=1234qwer+-
 uci commit wireless
 
 uci del dhcp.lan.ra
