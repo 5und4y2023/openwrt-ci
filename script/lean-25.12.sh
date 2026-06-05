@@ -14,6 +14,9 @@ mv $GITHUB_WORKSPACE/patch/lean/199-diy-25.12.sh package/base-files/files/etc/uc
 # sed -i 's/0x0580000 0x7280000/0x580000 0x1cc00000/g' target/linux/mediatek/dts/mt7986a-netcore-n60-pro.dts
 #mv $GITHUB_WORKSPACE/patch/lean/mt7981b-xiaomi_mi-router.dtsi target/linux/mediatek/dts/mt7981b-xiaomi_mi-router.dtsi
 
+if grep -Eq "CONFIG_PACKAGE_frpc=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
+	mv $GITHUB_WORKSPACE/patch/998-frpc.sh package/base-files/files/etc/uci-defaults/998-z-frpc.sh
+fi
 if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
     echo "✅ 已选择 luci-app-openclash，添加 openclash core"
     mkdir -p files/etc/openclash/core
