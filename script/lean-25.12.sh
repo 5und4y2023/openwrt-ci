@@ -33,8 +33,6 @@ git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git  pack
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
 
-# mv $GITHUB_WORKSPACE/patch/QINGYIN/QINGYINSSIDMAC1.sh package/base-files/files/etc/init.d/QINGYINSSIDMAC1.sh
-# mv $GITHUB_WORKSPACE/patch/QINGYIN/lede-10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
 
 find ./ | grep Makefile | grep oaf | xargs rm -f
 rm -rf feeds/packages/net/open-app-filter
@@ -63,7 +61,7 @@ rm -rf package/nas-packages/network
 
 rm -rf feeds/packages/net/{adguardhome,alist,easytier,lucky,tailscale}
 rm -rf feeds/luci/applications/{luci-app-adguardhome,luci-app-alist,luci-app-easytier,luci-app-lucky,luci-app-tailscale}
-git clone --depth 1 https://github.com/kenzok8/jell.git package/kz8-small
+git clone --depth 1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
 mv package/kz8-small/easytier package/easytier
