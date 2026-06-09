@@ -18,6 +18,37 @@ if ! uci -q get system.@imm_init[0].system_chn > "/dev/null"; then
 	EOF
 fi
 
+# 提取MAC地址
+# br-lan
+FRPMAC=$(ip link show br-lan | awk '/link\/ether/ {print $2}')
+
+if [ -z "$FRPMAC" ]; then
+    FRPMAC=$(cat /sys/class/net/br-lan/address 2>/dev/null)
+fi
+
+# eth0 和 wan
+if [ -z "$FRPMAC" ]; then
+    FRPMAC=$(cat /sys/class/net/eth0/address 2>/dev/null)
+fi
+if [ -z "$FRPMAC" ]; then
+    FRPMAC=$(ip link show wan | awk '/link\/ether/ {print $2}')
+fi
+
+
+# 如果还不行，尝试获取第一个有MAC地址的接口
+if [ -z "$FRPMAC" ]; then
+    for iface in /sys/class/net/*/address; do
+        FRPMAC=$(cat "$iface" 2>/dev/null | grep -v "00:00:00:00:00:00" | head -1)
+        [ -n "$FRPMAC" ] && break
+    done
+fi
+
+# 4. 处理MAC地址：去掉冒号并转大写
+FRPMAC_CLEAN=$(echo "$FRPMAC" | tr -d ':' | tr 'a-f' 'A-F')
+
+# 5. 组合成FRPNAME
+FRPNAME="${FRPMAC_CLEAN}"
+
 # 设置所有网口可访问网页终端
 uci delete ttyd.@ttyd[0].interface
 
@@ -39,8 +70,8 @@ sed -i '$a https://mirrors.pku.edu.cn/openwrt/releases/25.12.4/targets/mediatek/
 
 # wifi设置
 #WIFINAME=$(ip link show br-lan 2>/dev/null | awk '/link\/ether/{split($2,m,":");print toupper(m[5]m[6])}')
-uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
-uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
+uci set wireless.default_radio0.ssid=WiFi-${FRPNAME}-2.4G
+uci set wireless.default_radio1.ssid=WiFi-${FRPNAME}-5G
 #uci set wireless.default_radio0.encryption=psk2+ccmp
 #uci set wireless.default_radio1.encryption=psk2+ccmp
 #uci set wireless.default_radio0.key=password
